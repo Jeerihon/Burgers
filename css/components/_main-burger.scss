@@ -1,0 +1,18 @@
+/* main-burger */ 
+
+.main-burger {
+  margin-bottom: 50px;
+  margin-right: 12px;
+  position: relative;
+
+  &::before {
+    content: "";
+    height: 241px;
+    width: 451px;
+    top: 68px;
+    left: -36px;
+    position: absolute;
+    background-image: url(/images/drops.png);
+  }
+
+}
