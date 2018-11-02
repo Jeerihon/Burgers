@@ -488,6 +488,51 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -1.6px;
   display: block; }
 
+/* qualities section */
+.qualities {
+  background-image: url(/images/bg@2x.png);
+  background-size: cover; }
+  .qualities .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .qualities-top {
+    margin-bottom: 60px; }
+  .qualities-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    padding: 0 65px; }
+
+/* reviews section */
+.reviews .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
 /* components include single components styles */
 /* pagination styles*/
 .pagination {
@@ -605,3 +650,48 @@ h1, h2, h3, h4, h5, h6 {
 .title {
   font-size: 72px;
   font-family: "Gagalin", Arial, sans-serif; }
+
+/* arrow-scroll */
+.arrow-scroll__pic:hover {
+  cursor: pointer; }
+
+/* quality block */
+.quality {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 30%;
+  flex: 0 1 30%; }
+  .quality__img {
+    margin-bottom: 30px; }
+  .quality__text {
+    width: 90%;
+    font-family: "Lifehack", Arial, sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -.6px; }
+  .quality__desc {
+    margin: 0;
+    font-family: "Ubuntu", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    opacity: 0.8; }
+
+/* review-block */
+.review-block {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 25%;
+  flex: 1 1 25%; }

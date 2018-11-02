@@ -1,0 +1,9 @@
+/* reviews section */ 
+
+.reviews {
+  
+  .container {
+    @include mix-flex;
+    flex-wrap: wrap;
+  }
+}

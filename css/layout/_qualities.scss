@@ -1,0 +1,22 @@
+/* qualities section */
+
+.qualities {
+  background-image: url(/images/bg@2x.png);
+  background-size: cover;
+  
+  .container {
+    @include mix-flex ($jc: center);
+    flex-direction: column;
+  }
+
+  &-top {
+    margin-bottom: 60px;
+  }
+
+  &-main {
+    @include mix-flex ($jc: space-around, $ai: baseline);
+    padding: 0 65px;
+  }
+
+  
+}
