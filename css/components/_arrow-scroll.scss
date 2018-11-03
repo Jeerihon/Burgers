@@ -1,6 +1,8 @@
 /* arrow-scroll */ 
 
 .arrow-scroll {
+  position: fixed;
+  
   &__pic:hover {
     cursor: pointer;
   }

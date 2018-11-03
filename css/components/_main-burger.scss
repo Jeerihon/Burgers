@@ -5,6 +5,10 @@
   margin-right: 12px;
   position: relative;
 
+  &__img {
+    object-fit: contain;
+  }
+
   &::before {
     content: "";
     height: 241px;

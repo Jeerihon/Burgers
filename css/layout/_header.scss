@@ -1,32 +1,4 @@
-/* header */
-
 .header {
-  min-width: 100%;
-  min-height: 100%;
-  background-image: url(/images/video-bg.png);
-  background-size: cover;
-  position: relative; 
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-  }
-  
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(/images/texture.png);
-    background-size: cover;
-    opacity: 0.6;
-  }
-
-  &-top {
     @include mix-flex ($jc: space-between);
     padding: auto 80px;
     padding-top: 15px;
@@ -43,39 +15,4 @@
       margin-bottom: 10px;
       margin-right: 82px;
     }
-  }
-
-  &-main {
-    @include mix-flex($jc: space-between);
-    min-width: 49%;
-    padding: 0 130px 50px;
-  }
-
-  &-bottom {
-    @include mix-flex($jc: center);
-    margin-bottom: 40px;
-  }
-
-  &-btns {
-    width: 100%;
-    height: 100%;
-  }
 }
-
-.header__description {
-
-  .title {
-    color: $yellow;
-    margin: 8px auto 22px;
-  }
-  
-  span {
-    font-family: $Lifehack;
-    color: $white;
-    font-size: 65px;
-    line-height: .9;
-    letter-spacing: -1.6px;
-    display: block;
-  }
-}
-

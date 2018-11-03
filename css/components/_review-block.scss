@@ -2,4 +2,21 @@
 
 .review-block {
   flex: 1 1 25%;
+  height: 50%;
+  position: relative;
+  // background: url(/images/avatar-1.png) center center / cover no-repeat;
+  filter: grayscale(1);
+
+
+  &__list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    right: 0;
+    background: #rgba(#000, .5);
+
+
+    color: $white;
+  }
 }

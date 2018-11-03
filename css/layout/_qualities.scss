@@ -1,12 +1,12 @@
 /* qualities section */
 
 .qualities {
-  background-image: url(/images/bg@2x.png);
-  background-size: cover;
+  background: url(/images/bg.png) center center / cover no-repeat;
   
   .container {
     @include mix-flex ($jc: center);
     flex-direction: column;
+    justify-content: center;
   }
 
   &-top {
