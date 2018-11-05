@@ -3,13 +3,19 @@
 .btn {
   @include mix-btn ($white, $orange);
   display: block;
-  height: 34px;
-  width: 96px;
+  height: 100%;
+  width: 100%;
+  font-family: $Ubuntu;
+  font-weight: 500;
+  line-height: 35px;
+  height: 35px;
   cursor: pointer;
 
   &--red {
-    line-height: 35px;
-    font-family: $Ubuntu;
-    font-weight: 500;
+    width: 96px;
+  }
+
+  &--black {
+    width: 110px;
   }
 }

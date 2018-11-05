@@ -8,15 +8,4 @@
   &__img {
     object-fit: contain;
   }
-
-  &::before {
-    content: "";
-    height: 241px;
-    width: 451px;
-    top: 68px;
-    left: -36px;
-    position: absolute;
-    background-image: url(/images/drops.png);
-  }
-
 }

@@ -34,7 +34,7 @@
   margin: 0;
   color: $white;
   transition: all .2s;
-  padding: 7.2% 10.8% 0;
+  padding: 15% 10.8% ;
   opacity: 0;
   
   &:hover {
@@ -49,6 +49,7 @@
   &__name {
     font-family: $Gagalin;
     line-height: 28px;
+    // margin-top: 25%;
   }
 
   &__text {
@@ -59,6 +60,6 @@
   }
 
   &__btn {
-    margin-bottom: 25%;
+    // margin-bottom: 25%;
   }
 }

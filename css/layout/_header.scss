@@ -1,18 +1,5 @@
 .header {
     @include mix-flex ($jc: space-between);
-    padding: auto 80px;
+    // padding: auto 80px;
     padding-top: 15px;
-
-    &__left {
-      margin-left: 75px;
-    }
-
-    &__mid {
-      
-    }
-
-    &__right {
-      margin-bottom: 10px;
-      margin-right: 82px;
-    }
 }
