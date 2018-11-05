@@ -3,20 +3,62 @@
 .review-block {
   flex: 1 1 25%;
   height: 50%;
-  position: relative;
-  // background: url(/images/avatar-1.png) center center / cover no-repeat;
-  filter: grayscale(1);
+  overflow: hidden;
+  
+  &__img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: scale(1.0);
+    filter: grayscale(1);
+    transition: all .3s;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
 
+.review-block__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  color: $white;
+  transition: all .2s;
+  padding: 7.2% 10.8% 0;
+  opacity: 0;
+  
+  &:hover {
+    background: rgba(#000, .7);
+    opacity: 1;
+  }
+}
 
-  &__list {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    right: 0;
-    background: #rgba(#000, .5);
+.review-block {
+  font-size: 14px;
+  
+  &__name {
+    font-family: $Gagalin;
+    line-height: 28px;
+  }
 
+  &__text {
+    font-family: $Ubuntu;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-    color: $white;
+  &__btn {
+    margin-bottom: 25%;
   }
 }
