@@ -55,6 +55,7 @@
   &__text {
     height: 50%;
     padding-right: 8.2%;
+    margin: 0;
     font-family: $Ubuntu;
     line-height: 24px;
     overflow: hidden;
@@ -64,9 +65,4 @@
   &__btn {
     margin-top: auto;
   }
-}
-
-.review-block__text p {
-  height: 100%;
-  margin: 0;
 }

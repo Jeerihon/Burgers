@@ -13,6 +13,8 @@
   }
 
 .nav__link {
+    display: flex;
+    align-items: center;
     color: $white;
     text-align: left;
     font-size: 13px;
@@ -20,7 +22,12 @@
     transition: all .2s;
       
     &::before {
-      content: "•";
+      content: "";
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: $white; 
       margin-right: 15px;
     }
 
