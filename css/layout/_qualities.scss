@@ -9,13 +9,11 @@
     justify-content: center;
   }
 
-  .title {
-    margin-bottom: 60px;
-  }
-
   &-main {
     @include mix-flex ($jc: space-around, $ai: baseline);
   }
+}
 
-  
+.qualities__title {
+    margin-bottom: 60px;
 }

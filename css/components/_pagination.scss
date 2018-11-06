@@ -23,9 +23,9 @@
   &__link::before {
     width: 4px;
     height: 4px;
-    background-color: $white ;
-    
+    background-color: $white;
   }
+
   &__link--active::after {
   width: 14px;
   height: 14px;

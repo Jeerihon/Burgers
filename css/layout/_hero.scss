@@ -34,12 +34,6 @@
 
 
 .hero__description {
-
-  .title {
-    color: $yellow;
-    margin: 8px auto 22px;
-  }
-  
   span {
     font-family: $Lifehack;
     color: $white;
@@ -48,5 +42,9 @@
     letter-spacing: -1.6px;
     display: block;
   }
+}
+
+.hero__title {
+    margin: 8px auto 22px;
 }
 

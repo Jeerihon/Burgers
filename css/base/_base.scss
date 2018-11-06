@@ -5,12 +5,18 @@ html, body {
   line-height: normal;
 }
 
-body {
+* {
   box-sizing: border-box;
+}
+body {
   font-family: 'Gotham Pro', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: default;
+}
+
+p {
+  margin: 0;
 }
 
 a {

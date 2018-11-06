@@ -4,4 +4,16 @@
 .title {
   font-size: 72px;
   font-family: $Gagalin;
+
+  &--yellow {
+    color: $yellow;
+  }
+
+  &--black {
+    color: $black;
+  }
+
+  &--white {
+    color: $white;
+  }
 }
