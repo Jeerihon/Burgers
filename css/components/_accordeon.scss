@@ -4,11 +4,12 @@
 .accordeon-avatar {
 
   &__wrap {
-    width: 100px;
-    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 1.9%;
+    flex: 0 1 46%;
   }
 
   &__img {
