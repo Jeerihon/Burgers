@@ -19,7 +19,9 @@
         <header class="header">
           <div class="header__left">
             <a href="index.html" class="logo">
-              <img src="/images/icons/logo.svg" alt="Лого" class="logo__img">
+              <svg class="logo__img" width="92" height="69">
+                <use xlink:href="/images/icons/sprite.svg#logo" />
+              </svg>
             </a>
           </div>
           <div class="header__mid">
@@ -83,9 +85,11 @@
           </ul>
         </div>
         <div class="hero-bottom">
-          <button class="arrow-scroll">
-            <img class="arrow-scroll__pic" src="/images/icons/arrow-scroll.svg" alt="arrow-scroll">
-          </button>
+          <div class="arrow-scroll__btn">
+            <svg class="arrow-scroll">
+              <use xlink:href="/images/icons/sprite.svg#arrow-scroll"></use>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
@@ -96,7 +100,9 @@
         <div class="qualities-main">
           <article class="quality">
             <div class="quality__img">
-              <img class="quality__pic" src="/images/meat.png" alt="meat">
+              <svg class="quality__pic">
+                <use xlink:href="/images/icons/sprite.svg#meat" />
+              </svg>
             </div>
             <h3 class="quality__title">
               100% свежее мясо
@@ -109,7 +115,9 @@
           </article>
           <article class="quality">
             <div class="quality__img">
-              <img class="quality__pic" src="/images/hand.png" alt="meat">
+              <svg class="quality__pic">
+                <use xlink:href="/images/icons/sprite.svg#hand" />
+              </svg>
             </div>
             <h3 class="quality__title">
               Ручная сборка
@@ -122,7 +130,9 @@
           </article>
           <article class="quality">
             <div class="quality__img">
-              <img class="quality__pic" src="/images/natural.png" alt="meat">
+              <svg class="quality__pic">
+                <use xlink:href="/images/icons/sprite.svg#natural" />
+              </svg>
             </div>
             <h3 class="quality__title">
               Натуральные ингредиенты
@@ -371,6 +381,10 @@
           </ul>
         </div>
       </div>
+    </section>
+    <!-- menu section -->
+    <section class="menu">
+
     </section>
   </div>
   <!-- pagination -->
