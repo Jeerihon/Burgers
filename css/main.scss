@@ -1,10 +1,10 @@
 
 
-/* base include global base styles */
-@import 'base/module'; 
-
 /* utils include global mixin, func styles */
 @import 'utils/module';
+
+/* base include global base styles */
+@import 'base/module'; 
 
 /* vendors include side mixin, func styles */
 @import 'vendors/module';

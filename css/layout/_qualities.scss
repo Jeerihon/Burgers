@@ -11,9 +11,14 @@
 
   &-main {
     @include mix-flex ($jc: space-around, $ai: baseline);
+
+    @include tablets {
+      flex-direction: column;
+      text-align: left;
+    }
   }
 }
 
 .qualities__title {
-    margin-bottom: 60px;
+    margin-bottom: rem(60px);
 }

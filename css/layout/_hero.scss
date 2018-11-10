@@ -24,11 +24,16 @@
 
   &-main {
     @include mix-flex($jc: space-between);
+    @include tablets {
+      flex-direction: column;
+      text-align: center;
+      justify-content: center; 
+    }
   }
 
   &-bottom {
     @include mix-flex($jc: center);
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
   }
 }
 
@@ -37,14 +42,19 @@
   span {
     font-family: $Lifehack;
     color: $white;
-    font-size: 65px;
+    font-size: rem(65px);
     line-height: .9;
     letter-spacing: -1.6px;
     display: block;
+
+    @include tablets {
+      padding: 0 10%;
+      text-align: center;
+    }
   }
 }
 
 .hero__title {
-    margin: 8px auto 22px;
+    margin: rem(8px) auto rem(22px);
 }
 

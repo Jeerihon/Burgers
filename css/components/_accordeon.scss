@@ -1,89 +1,170 @@
 /* accordeon block */
 
-
-.accordeon-avatar {
-
-  &__wrap {
-    max-width: 100px;
-    max-height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 1.9%;
-    flex: 0 1 46%;
-  }
-
-  &__img {
+.accordeon {
+  &__head {
     width: 100%;
-    height: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-family: $Gagalin;
+    font-size: rem(14px);
+    line-height: rem(24px);
+    color: $white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .2s;
+    
+    @include tablets {
+      justify-content: center;
+    }
+    &:hover {
+      color: $yellow;
+    }
+  }
+  &__body {
+    display: flex;
+    height: 0;
+    overflow: hidden;
+    margin-top: 2.6%;
+    
+    @include tablets {
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
 .accordeon__item {
-    margin-bottom: 5%;
-}
-
-.accordeon {
-  &__head {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-family: $Gagalin;
-    font-size: 14px;
-    line-height: 24px;
-    color: $white;
-    text-transform: uppercase;
-    transition: all .2s;
-
-    &:hover {
-      color: $yellow;
-    }
-
-    &::before {
-      content: "";
-      display: block;
-      border: 5px solid transparent;
-      border-bottom: 7px solid $yellow; 
-      margin-right: 1.6%;
-    }
-}
-
-  &__body {
-    display: flex;
-    height: 0;
-    overflow: hidden; 
-    margin-top: 2.6%;
-  }
+  margin-bottom: 5%;
 }
 
 .accordeon__item--active {
-
   .accordeon__head {
     color: $yellow;
-
     &::before {
-      border-top: 7px solid $yellow;
+      border-top: rem(7px) solid $yellow;
       border-bottom: none;
     }
   }
-
   .accordeon__body {
     height: auto;
+    @include tablets {
+      flex-direction: column;
+    }
+  }
+}
+
+.accordeon-avatar {
+  &__wrap {
+    min-width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1.9%;
+
+    @include tablets {
+      margin-bottom: rem(9px);
+    }
   }
 }
 
 .accordeon__desc {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   font-family: $Ubuntu;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: rem(14px);
+  line-height: rem(24px);
   color: $white;
+  height: 100%;
 
+  @include tablets {
+    justify-content: center;
+    align-items: center;
+  }
   span {
     font-weight: bold;
-  }
 
+    @include tablets {
+      margin-bottom: rem(9px);
+    }
+  }
   p {
     font-weight: 300;
     width: 80%;
+    
+  }
+}
+
+.accordeon__head {
+  &::before {
+    content: "";
+    display: block;
+    border: rem(5px) solid transparent;
+    border-bottom: rem(7px) solid $yellow;
+    margin-right: 1.6%;
+  }
+}
+
+.accordeon--menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+
+  .accordeon__list {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  .accordeon__item {
+    height: 100%;
+  }
+
+  .accordeon__head {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 5rem;
+    font-size: 1.875rem;
+    line-height: 1em;
+    writing-mode: vertical-rl;
+    h3 {
+      transform: rotate(180deg);
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .accordeon__body {
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba($black, .8);
+  }
+}
+
+.accordeon--menu .accordeon__head::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba($dark-black, .7);
+}
+
+.accordeon--menu .accordeon__item--active {
+  .accordeon__body {
+    width: 100%;
+  }
+}
+
+
+// set bg for each item
+
+@each $bg in (1, 2, 3) {
+  .accordeon--menu .accordeon__head--#{$bg} {
+    background: url(/images/menu-item-#{$bg}.png) center center / cover no-repeat;
   }
 }

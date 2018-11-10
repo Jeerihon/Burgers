@@ -2,14 +2,19 @@
 
 /* colors*/
 
-/* hero colors*/
 $yellow: #f9b43b;
 $white: #ffffff;
 $orange: #e45028;
 $black: #2f3234;
+$dark-black: #1f2122;
 
 /* fonts */ 
 
 $Gagalin: "Gagalin", Arial, sans-serif;
 $Ubuntu: "Ubuntu", Arial, sans-serif;
 $Lifehack: "Lifehack", Arial, sans-serif;
+
+/* breakpoints */ 
+
+$tablets: 769px;
+$phones: 481px;
