@@ -2,6 +2,7 @@
 
 html {
   font-size: 16px;
+  user-select: none;
 
   @include tablets {
     font-size: 14px; 

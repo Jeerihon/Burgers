@@ -27,6 +27,7 @@
     height: 0;
     overflow: hidden;
     margin-top: 2.6%;
+    user-select: all;
     
     @include tablets {
       justify-content: center;
