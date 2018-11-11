@@ -68,12 +68,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  max-width: 960px;
-  padding: 0 2.083333333;
+  max-width: 940px;
   margin: 0 auto;
   height: 100%;
-
+  
   @include tablets {
     width: 95%;
   }
+
 }

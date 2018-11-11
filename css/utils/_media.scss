@@ -1,5 +1,11 @@
 /* mixin for breakponts styles */ 
 
+
+@mixin desktop {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
 @mixin tablets {
   @media (max-width: $tablets) {
     @content;

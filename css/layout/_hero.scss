@@ -24,6 +24,11 @@
 
   &-main {
     @include mix-flex($jc: space-between);
+
+    @include desktop {
+      margin-left: rem(20px);
+    }
+
     @include tablets {
       flex-direction: column;
       text-align: center;
@@ -39,13 +44,19 @@
 
 
 .hero__description {
+  max-width: 100%;
+
+  @include tablets {
+    max-width: 100%;
+  }
   span {
+    display: block;
     font-family: $Lifehack;
     color: $white;
     font-size: rem(65px);
     line-height: .9;
     letter-spacing: -1.6px;
-    display: block;
+
 
     @include tablets {
       padding: 0 10%;

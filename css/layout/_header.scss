@@ -2,20 +2,25 @@
   @include mix-flex ($jc: space-between);
   padding-top: rem(15px);
 
-  &__mid {
+  &__left {
+    margin-left: 10px;
+  }
 
-    @media (max-width: 880px) {
-      display: none;
-    }
+  &__mid {
+    margin-right: rem(10px);
 
     @include tablets {
-      display: none;
-    }
-    @include phones {
       display: none;
     }
   }
 
   &__right {
+    display: flex;
+    justify-content: center;align-items: center;
+    margin-right: rem(20px);
+
+    @include tablets {
+      margin-right: rem(10px);
+    }
   }
 }
