@@ -9,6 +9,10 @@
     font-size: rem(68px);
   }
 
+  @include phones {
+    font-size: rem(64px);
+  }
+
   &--yellow {
     color: $yellow;
   }
@@ -21,3 +25,4 @@
     color: $white;
   }
 }
+

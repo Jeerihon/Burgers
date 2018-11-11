@@ -16,6 +16,7 @@
     
     @include tablets {
       justify-content: center;
+      font-size: rem(25px);
     }
     &:hover {
       color: $yellow;
@@ -63,7 +64,7 @@
     margin-right: 1.9%;
 
     @include tablets {
-      margin-bottom: rem(9px);
+      margin: rem(10px) 0;
     }
   }
 }

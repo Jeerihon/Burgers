@@ -12,9 +12,9 @@
   &-main {
     @include mix-flex ($jc: space-around, $ai: baseline);
 
-    @include tablets {
+    @include phones {
       flex-direction: column;
-      text-align: left;
+      // justify-content: flex-start;
     }
   }
 }

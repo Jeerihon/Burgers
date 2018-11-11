@@ -19,9 +19,22 @@
     width: rem(110px);
     background-color: $black;
 
+    @include phones {
+      display: none;
+    }
+
     &:hover {
       color: $white;
       background-color: $dark-black;
+    }
+  }
+
+  &--phones{
+    display: none;
+    width: rem(130px);
+
+    @include phones {
+      display: block;
     }
   }
 }

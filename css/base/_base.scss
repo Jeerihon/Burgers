@@ -8,7 +8,7 @@ html {
   }
 
   @include phones {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   max-width: 960px;
-  padding: 0 rem(20px);
+  padding: 0 2.083333333;
   margin: 0 auto;
   height: 100%;
 

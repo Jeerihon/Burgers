@@ -7,6 +7,10 @@
   right: 0;
   height: 100%;
   max-width: 65%;
+
+  @include tablets {
+  max-width: 100%;
+  }
 }
 
 .menu__list {
@@ -72,9 +76,27 @@
 
 .menu__item--active {
   .menu__body {
-   width: rem(540px);
+    width: 100%;
     padding: 4.0625rem 2.1875rem;
+    z-index: 20;
   }
+
+
+  @include phones {
+  + .menu__item {
+      z-index: 10;
+      position: absolute;
+      right: 5rem;
+
+      + .menu__item {
+        position: absolute;
+      }
+    }
+  }
+}
+
+.menu__item:last-child {
+  right: 0;
 }
 
 
