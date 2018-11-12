@@ -54,10 +54,6 @@
   flex: 1;
   flex-direction: column;
   margin-right: rem(19px);
-  
-  :last-child {
-    margin-right: 0;
-  }
 }
 
 .form__name {
@@ -96,6 +92,10 @@
   margin: 0 rem(20px) 0 rem(30px);
   cursor: pointer;
 
+  @include tablets {
+    margin-left: rem(35px);
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -125,10 +125,6 @@
     border-radius: 50%;
     background-color: $orange;
     transition: all .3s;
-
-    // @include tablets {
-    //   left: rem(-1px);
-    // }
   }
 
   &-checkbox::after {
