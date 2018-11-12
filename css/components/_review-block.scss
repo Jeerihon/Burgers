@@ -82,6 +82,11 @@
     text-overflow: ellipsis;
     user-select: initial;
 
+    
+  @include desktop {
+    font-size: rem(12px);
+  }
+
     @include tablets {
       padding: 0;
     }

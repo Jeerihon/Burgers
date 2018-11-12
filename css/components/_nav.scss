@@ -8,10 +8,10 @@
   font-size: rem(13px);
   justify-content: center;
   align-items: baseline;
-  // width: 100%;
   
   @include desktop {
     font-size: rem(10px);
+    margin-left: 0;
   }
 }
 

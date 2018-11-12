@@ -31,7 +31,7 @@
 
   &--phones{
     display: none;
-    width: rem(130px);
+    width: auto;
 
     @include phones {
       display: block;
