@@ -99,8 +99,8 @@
   &::before {
     content: "";
     position: absolute;
-    width: rem(14px);
-    height: rem(14px);
+    width: 14px;
+    height: 14px;
     left: -30px;
     border: 1px solid $white;
     border-radius: 50%;
@@ -116,36 +116,31 @@
   &-radio::after {
     content: "";
     position: absolute;
-    width: rem(6px);
-    height: rem(6px);
+    width: 6px;
+    height: 6px;
     opacity: 0;
-    left: rem(-26px);
-    top: rem(4px);
+    left: -26px;
+    top: 4px;
     border: 1px solid transparent;
     border-radius: 50%;
     background-color: $orange;
     transition: all .3s;
 
-    @include tablets {
-      left: rem(-30px);
-    }
+    // @include tablets {
+    //   left: rem(-1px);
+    // }
   }
 
   &-checkbox::after {
     content: "";
     position: absolute;
-    width: rem(10px);
-    height: rem(10px);
-    left: rem(-27px);
-    top: rem(4px);
+    width: 10px;
+    height: 10px;
+    left: -27px;
+    top: 3px;
     opacity: 0;
     background: url(/images/icons/check.svg) center center / cover no-repeat;
     transition: all .2s;
-
-    
-    @include tablets {
-      left: rem(-31px);
-    }
   }
 }
 
