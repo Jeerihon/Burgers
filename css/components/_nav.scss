@@ -13,39 +13,95 @@
     font-size: rem(10px);
     margin-left: 0;
   }
+  
+  @include tablets {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    font-size: rem(24px);
+    background-color: rgba($black, .95);
+  }
 }
 
 .nav__list {
     display: flex;
+
+    @include tablets {
+      flex-direction: column;
+      
+    }
   }
 
 .nav__link {
     color: $white;
     text-align: left;
-    margin-left: rem(15px);
+    margin-left: 15px;
     transition: all .2s;
 
     &:hover {
       color: $orange;
     }
+      
+  @include tablets {
+    margin: 0;
+  }
 }
 
 .nav__item {
     display: flex;
     align-items: center;
-    margin-right: rem(15px);
+    margin-right: 15px;
 
     &::before {
       content: "";
       display: block;
-      width: rem(4px);
-      height: rem(4px);
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
-      background: $white; 
+      background: $white;
+      
+      @include tablets {
+        width: 7px;
+        height: 7px;
+        margin: rem(28px) 0;
+      }
     }
 
   &:first-child::before {
-
       display: none;
   }
+
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+
+.nav__btn {
+  display: none;
+  font-size: rem(30px);
+  color: $white;
+  margin-left: rem(20px);
+  cursor: pointer;
+  transition: all .2s;
+  
+  &:hover {
+    color: $orange;
+  }
+  
+  @include tablets {
+    display: block;
+  }
+}
+
+.nav__btn--active {
+  position: absolute;
+  top: rem(30px); 
+  right: rem(20px);
+  font-size: 30px;
 }
