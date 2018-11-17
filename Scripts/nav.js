@@ -2,29 +2,22 @@
 
 window.onload=function(){
 
-
-  const btn = document.querySelector('#nav__btn');
-  const btnActive = document.querySelector('#nav__btn--active');
-  const nav = document.querySelector('#nav');
-  const width = document.documentElement.clientWidth;
-  const width2 = window.matchMedia("(max-width: 786px)");
-  // const isActive = nav.style.display = 'block';
+  const btn = document.querySelector('#burger-btn'),
+        nav = document.querySelector('#nav'),
+        navList = document.querySelector('#nav__list'),
+        linkBtns = [navList.children],
+        link = document.querySelector('#nav__list > li'),
+        isBtnActive = btn.classList.contains('burger-btn--active');
   
   btn.addEventListener('click', function() {
-    if (width2.matches ) {
-      nav.style.display = 'block';
-    }
+    btn.classList.toggle('burger-btn--active');
+    nav.classList.toggle('nav--active');
   });
-
-  btnActive.addEventListener('click', function() {
-    if ( nav.style.display = 'block') {
-      nav.style.display = 'none';
-    }
-  });
-
-
-  // const computedStyle = getComputedStyle(nav);
-  // console.log(computedStyle);
-
-
+  
+  for (const key of linkBtns) {
+    link.addEventListener('click', function() {
+      btn.classList.toggle('burger-btn--active');
+      nav.classList.toggle('nav--active');
+    });
+  };
 }

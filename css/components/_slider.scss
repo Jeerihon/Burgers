@@ -1,0 +1,23 @@
+/* slider */
+
+.slider__container {
+  display: flex;
+  height: 100%;
+}
+
+
+.slider__arrow{
+  display: flex;
+  align-items: center;
+  width: 10%;
+  height: 100%;
+
+
+  &-left svg{
+    transform: rotate(90deg);
+  }
+
+  &-right svg{
+    transform: rotate(-90deg);
+  }
+}

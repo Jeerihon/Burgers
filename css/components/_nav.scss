@@ -1,4 +1,4 @@
-/* nav styles */ 
+/* nav styles */
 
 .nav {
   margin-left: rem(25px);
@@ -8,15 +8,18 @@
   font-size: rem(13px);
   justify-content: center;
   align-items: baseline;
-  
+  visibility: hidden;
+  opacity: 0;
+  will-change: opacity;
+  transition: all .3s;
+
   @include desktop {
     font-size: rem(10px);
     margin-left: 0;
   }
-  
+
   @include tablets {
-    display: none;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: absolute;
     top: 0;
@@ -25,83 +28,99 @@
     bottom: 0;
     font-size: rem(24px);
     background-color: rgba($black, .95);
+    transform: translate(-100%);
+    overflow: hidden;
+
+    .nav__item {
+      opacity: 0;
+      transform: scale(0);
+      transition: all .2s;
+    }
+  }
+}
+
+
+.nav--active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+
+  
+  .nav__item {
+    opacity: 1;
+    transform: scale(1);
+
+    &:nth-child(1) {
+      transition-delay: .2s;
+    }
+
+    &:nth-child(2) {
+      transition-delay: .3s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: .4s;
+    }
+
+    &:nth-child(4) {
+      transition-delay: .5s;
+    }
+
+    &:nth-child(5) {
+      transition-delay: .4s;
+    }
+
+    &:nth-child(6) {
+      transition-delay: .3s;
+    }
+
+    &:nth-child(7) {
+      transition-delay: .2s;
+    }
   }
 }
 
 .nav__list {
-    display: flex;
-
-    @include tablets {
-      flex-direction: column;
-      
-    }
+  display: flex;
+  @include tablets {
+    flex-direction: column;
   }
+}
 
 .nav__link {
-    color: $white;
-    text-align: left;
-    margin-left: 15px;
-    transition: all .2s;
-
-    &:hover {
-      color: $orange;
-    }
-      
+  color: $white;
+  text-align: left;
+  margin-left: 15px;
+  transition: all .2s;
+  &:hover {
+    color: $orange;
+  }
   @include tablets {
     margin: 0;
   }
 }
 
 .nav__item {
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-
-    &::before {
-      content: "";
-      display: block;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: $white;
-      
-      @include tablets {
-        width: 7px;
-        height: 7px;
-        margin: rem(28px) 0;
-      }
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  &::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: $white;
+    @include tablets {
+      width: 7px;
+      height: 7px;
+      margin: rem(28px) 0;
     }
-
-  &:first-child::before {
-      display: none;
   }
-
+  &:first-child::before {
+    display: none;
+  }
   @include tablets {
     flex-direction: column;
   }
-}
-
-
-.nav__btn {
-  display: none;
-  font-size: rem(30px);
-  color: $white;
-  margin-left: rem(20px);
-  cursor: pointer;
-  transition: all .2s;
-  
-  &:hover {
-    color: $orange;
-  }
-  
-  @include tablets {
-    display: block;
-  }
-}
-
-.nav__btn--active {
-  position: absolute;
-  top: rem(30px); 
-  right: rem(20px);
-  font-size: 30px;
 }
