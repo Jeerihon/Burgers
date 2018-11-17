@@ -1,7 +1,7 @@
 
 
 window.onload=function(){
-
+  
   const btn = document.querySelector('#burger-btn'),
         nav = document.querySelector('#nav'),
         navList = document.querySelector('#nav__list'),

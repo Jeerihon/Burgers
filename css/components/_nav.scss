@@ -10,7 +10,7 @@
   align-items: baseline;
   visibility: hidden;
   opacity: 0;
-  will-change: opacity;
+  will-change: opacity, transform;
   transition: all .3s;
 
   @include desktop {
