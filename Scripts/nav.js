@@ -1,5 +1,4 @@
 
-
 window.onload=function(){
   
   const btn = document.querySelector('#burger-btn'),
@@ -20,4 +19,4 @@ window.onload=function(){
       nav.classList.toggle('nav--active');
     });
   };
-}
+};

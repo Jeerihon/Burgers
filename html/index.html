@@ -8,7 +8,6 @@
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link rel="stylesheet" href="/css/main.css">
   <script src="/Scripts/nav.js"></script>
-  <script src="/Scripts/menu.js"></script>
   <title>My burger</title>
 </head>
 
@@ -168,18 +167,19 @@
         <ul class="slider">
           <li class="slider__item">
             <div class="burger">
-              <div class="burger__composotion">
-                <svg class="burger__composotion-img">
+              <img src="/images/burgers-slider/burger-1.png" alt="burger" class="burger__img">
+              <div class="burger__composition">
+                <svg class="burger__composition-img">
                   <use xlink:href="/images/icons/sprite.svg#burger"></use>
                 </svg>
                 <span>состав</span>
               </div>
               <div class="burger__weight">
-                <svg class="burger__weight-img">
+                <!-- <svg class="burger__weight-img">
                   <use xlink:href="/images/icons/sprite.svg#kkal"></use>
-                </svg>
-                <span>1200</span>
-                <span>ккал</span>
+                </svg> -->
+                <span class="burger__weight--large">1200</span>
+                <span class="burger__weight--kkal">ккал</span>
               </div>
             </div>
             <div class="burger__desc">
@@ -195,7 +195,7 @@
               </div>
               <div class="burger__order">
                 <div class="burger__cost">
-                  <span>500</span>
+                  <span class="title title--orange">500</span>
                   <span>рублей</span>
                 </div>
                 <a href="#order" class="btn btn--red">
@@ -303,8 +303,8 @@
   <section class="menu section" id="menu">
     <h2 class="title title--white menu__title">меню</h2>
     <div class="menu__acc">
-      <ul class="menu__list">
-        <li class="menu__item menu__item--active" id="menu">
+      <ul class="menu__list" id="menu__list">
+        <li class="menu__item">
           <div class="menu__head menu__head--1">
             <h3>для мясоедов</h3>
           </div>
