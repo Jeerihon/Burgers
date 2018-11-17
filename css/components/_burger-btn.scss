@@ -36,6 +36,7 @@
 }
 
 .burger-btn--active {
+
   span {
     opacity: 0;
   }
@@ -43,9 +44,6 @@
   &::before {
     margin-bottom: 0px;
     transform: translatey(11px) rotate(45deg);
-    @include phones {
-      transform: translatey(12px) rotate(45deg);
-    };
   }
 
   &::after {
