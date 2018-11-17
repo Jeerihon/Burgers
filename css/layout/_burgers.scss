@@ -22,8 +22,10 @@
   @include tablets {
     width: 100%;
     align-items: flex-end;
-    // height: 70%;
-    // margin-top: rem(125px);
+  }
+
+  @include phones {
+    height: 60%;
   }
 }
 

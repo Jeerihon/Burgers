@@ -8,16 +8,13 @@
   font-size: rem(13px);
   justify-content: center;
   align-items: baseline;
-  visibility: hidden;
-  opacity: 0;
-  will-change: opacity, transform;
   transition: all .3s;
-
+  
   @include desktop {
     font-size: rem(10px);
     margin-left: 0;
   }
-
+  
   @include tablets {
     justify-content: center;
     align-items: center;
@@ -30,7 +27,10 @@
     background-color: rgba($black, .95);
     transform: translate(-100%);
     overflow: hidden;
-
+    visibility: hidden;
+    opacity: 0;
+    will-change: opacity, transform;
+    
     .nav__item {
       opacity: 0;
       transform: scale(0);
