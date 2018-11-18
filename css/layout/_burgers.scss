@@ -23,10 +23,6 @@
     width: 100%;
     align-items: flex-end;
   }
-
-  @include phones {
-    height: 60%;
-  }
 }
 
 .burger__img {
