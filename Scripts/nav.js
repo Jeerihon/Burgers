@@ -10,6 +10,7 @@ window.onload=function(){
   
   btn.addEventListener('click', function() {
     btn.classList.toggle('burger-btn--active');
+    btn.classList.toggle('burger-btn--animation');
     nav.classList.toggle('nav--active');
   });
   
