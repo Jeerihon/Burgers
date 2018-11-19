@@ -134,7 +134,8 @@
   margin-bottom: rem(56px);
 
   @include tablets {
-    margin-bottom: rem(50px);
+    margin-bottom: 2%;
+    line-height: 1;
   }
 
   @include phones {
@@ -151,7 +152,7 @@
 
   
   @include tablets {
-    margin-bottom: 5%;
+    margin-bottom: 0;
   }
   
   @include phones {
@@ -174,5 +175,15 @@
   font-size: rem(30px);
   color: $orange;
   margin-right: rem(29px);
+
+  @include phones {
+    display: flex;
+    align-items: baseline;
+    margin-right: 0.8125;
+
+    span {
+      margin-right: rem(5px);
+    }
+  }
 }
 

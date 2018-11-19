@@ -16,8 +16,17 @@ window.onload=function(){
   for (const element of links) {
     element.addEventListener('click', function() {
       btn.classList.toggle('burger-btn--active');
-      btn.classList.toggle('burger-btn--active');
+      btn.classList.toggle('burger-btn--animation');
       nav.classList.toggle('nav--active');
     });
   };
+
+  // for (let i = 0; i < navList.length; i++) {
+  //   navList.childNodes[i].addEventListener ('click', (e) => {
+  //     btn.classList.toggle('burger-btn--active');
+  //     btn.classList.toggle('burger-btn--active');
+  //     nav.classList.toggle('nav--active');
+  //   })
+    
+  // }
 };

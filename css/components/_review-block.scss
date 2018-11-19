@@ -83,11 +83,13 @@
     user-select: initial;
 
     
-  @include desktop {
-    font-size: rem(12px);
-  }
+    @include desktop {
+      font-size: rem(12px);
+      line-height: rem(16px);
+    }
 
     @include tablets {
+      // line-height: initial;
       padding: 0;
     }
 
