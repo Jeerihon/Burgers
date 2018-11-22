@@ -111,13 +111,17 @@
     .menu__desc {
       padding: 24px 10px 5px 13px;
     }
+      
+    .menu__desc:last-child {
+      padding-top: rem(8px);
+    }
   }
 }
 
 .menu__item--active {
   @include phones {
   + .menu__item {
-      z-index: 10;
+      // z-index: 10;
       position: absolute;
       right: 5rem;
 
@@ -128,9 +132,9 @@
   }
 } 
 
-  .menu__item:last-child {
-    right: 0;
-  }
+.menu__item:last-child {
+  right: 0;
+}
 
 
 // set bg for each item
