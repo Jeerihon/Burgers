@@ -44,7 +44,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all .3s;
-   
+  
   @include tablets {
     top: rem(80px);
   }
@@ -184,6 +184,43 @@
     span {
       margin-right: rem(5px);
     }
+  }
+}
+
+
+.burger__composition-list {
+  position: absolute;
+  display: hidden;
+  opacity: 0;
+  top: 15%;
+  left: rem(110px);
+  margin-right: 10px;
+  background: rgba($white, .9);
+  border-radius: 5px;
+  width: 16.875rem;
+  transition: all .3s ease;
+
+  @include tablets {
+    top: 5rem;
+    width: 50vw;
+
+  }
+
+  
+  @include phones {
+    left: rem(60px);
+    width: 90%;
+  }
+
+  &--active {
+    display: block;
+  }
+}
+
+.burger__composition:hover {
+  + .burger__composition-list {
+    display: block;
+    opacity: 1;
   }
 }
 

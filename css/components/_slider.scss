@@ -45,11 +45,16 @@
   }
 }
 
+.slider {
+  display: flex;
+}
+
 .slider__item {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
     
   @include tablets {
     flex-direction: column;

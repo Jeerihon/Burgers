@@ -4,9 +4,9 @@
         nextBtn = document.querySelector('.slider__arrow-right');
 
   prevBtn.addEventListener('click', (e) => {
-    console.log('хрю');
+    console.log('prev');
   })
 
   nextBtn.addEventListener('click', (e) => {
-    console.log('Аня говнюк');
+    console.log('next');
   })

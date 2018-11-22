@@ -173,6 +173,69 @@
                 </svg>
                 <span>состав</span>
               </div>
+                  <div class="burger__composition-list">
+                    <div class="comp__wrap">
+                      <ul class="comp__list">
+                        <li class="comp__item">
+                          <div class="comp__img">
+                            <svg class="burger__composition-img">
+                              <use xlink:href="/images/icons/sprite.svg#beef"></use>
+                            </svg>
+                          </div>
+                          <span class="comp__name">Говядина</span>
+                          <span class="comp__text">300г</span>
+                        </li>
+                        <li class="comp__item">
+                          <div class="comp__img">
+                            <svg class="burger__composition-img">
+                              <use xlink:href="/images/icons/sprite.svg#buns"></use>
+                            </svg>
+                          </div>
+                          <span class="comp__name">Булочки</span>
+                          <span class="comp__text">100г</span>
+                        </li>
+                        <li class="comp__item">
+                          <div class="comp__img">
+                            <svg class="burger__composition-img">
+                              <use xlink:href="/images/icons/sprite.svg#salad"></use>
+                            </svg>
+                          </div>
+                          <span class="comp__name">Зелень</span>
+                          <span class="comp__text">70г</span>
+                        </li>
+                        <li class="comp__item">
+                          <div class="comp__img">
+                            <svg class="burger__composition-img">
+                              <use xlink:href="/images/icons/sprite.svg#sauce"></use>
+                            </svg>
+                          </div>
+                          <span class="comp__name">Соус</span>
+                          <span class="comp__text">150г</span>
+                        </li>
+                        <li class="comp__item">
+                          <div class="comp__img">
+                            <svg class="burger__composition-img">
+                              <use xlink:href="/images/icons/sprite.svg#cucumber"></use>
+                            </svg>
+                          </div>
+                          <span class="comp__name">Овощи</span>
+                          <span class="comp__text">200г</span>
+                        </li>
+                        <li class="comp__item">
+                          <div class="comp__img">
+                            <svg class="burger__composition-img">
+                              <use xlink:href="/images/icons/sprite.svg#cheese"></use>
+                            </svg>
+                          </div>
+                          <span class="comp__name">Сыр</span>
+                          <span class="comp__text">80г</span>
+                        </li>
+                      </ul>
+                      <button class="btn--close comp__btn">
+                        <span></span>
+                      </button>
+                    </div>
+                  </div>
               <div class="burger__weight">
                 <span class="burger__weight--large">1200</span>
                 <span class="burger__weight--kkal">ккал</span>
@@ -400,6 +463,8 @@
               Никогда не думал, что булочки
               могут быть такими мягкими, котлетка такой сочной,
               а сыр таким расплавленным.
+
+              asdasdasd
             </p>
             <button class="btn review-block__btn btn--black" type="button">
               подробнее
@@ -715,11 +780,27 @@
   </div>
   <!-- end pagination -->
 
+  <!-- templates  -->
+  <script type="template" id="reviewTemplate">
+    <div class="overlay__wrap">
+      <div class="overlay__block">
+        <span class="overlay__name"></span>
+        <p class="overlay__text"></p>
+        <button class="btn--close overlay__close">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </script>
+  <!-- end templates  -->
+
   <!-- scripts -->
   <script src="/Scripts/nav.js"></script>
   <script src="/Scripts/menu.js"></script>
   <script src="/Scripts/acc.js"></script>
   <script src="/Scripts/slider.js"></script>
+  <script src="/Scripts/overlay.js"></script>
+  <!-- end scripts -->
 </body>
 
 </html>
