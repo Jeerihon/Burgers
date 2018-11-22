@@ -118,22 +118,23 @@
   }
 }
 
+.menu__item--active {
+  @include phones {
+  + .menu__item {
+      z-index: 10;
+      position: absolute;
+      right: 5rem;
 
-  // @include phones {
-  // + .menu__item {
-  //     z-index: 10;
-  //     position: absolute;
-  //     right: 5rem;
+      + .menu__item {
+        position: absolute;
+      }
+    }
+  }
+} 
 
-  //     + .menu__item {
-  //       position: absolute;
-  //     }
-  //   }
-  // }
-
-// .menu__item:last-child {
-//   right: 0;
-// }
+  .menu__item:last-child {
+    right: 0;
+  }
 
 
 // set bg for each item
