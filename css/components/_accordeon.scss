@@ -35,6 +35,7 @@
     @include tablets {
       justify-content: center;
       align-items: center;
+      transition: none;
     }
   }
 }
@@ -57,11 +58,7 @@
     @include tablets {
       flex-direction: column;
       
-      height: 150px;
-    }
-
-    @include phones {
-      height: 10px;
+      height: 100%;
     }
   }
 }
