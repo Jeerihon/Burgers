@@ -12,7 +12,7 @@
     color: $white;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all .2s;
+    transition: all .3s;
     
     @include tablets {
       justify-content: center;
@@ -22,12 +22,15 @@
       color: $yellow;
     }
   }
+
+
   &__body {
     display: flex;
     height: 0;
     overflow: hidden;
     margin-top: 2.6%;
     user-select: all;
+    transition: height .3s;
     
     @include tablets {
       justify-content: center;
@@ -49,9 +52,16 @@
     }
   }
   .accordeon__body {
-    height: auto;
+    height: 150px;
+
     @include tablets {
       flex-direction: column;
+      
+      height: 150px;
+    }
+
+    @include phones {
+      height: 10px;
     }
   }
 }
