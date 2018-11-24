@@ -26,7 +26,7 @@
 }
 
 .burger__img {
-  max-width: 100%;
+  max-width: 84%;
 }
 
 .burger__composition {
@@ -42,14 +42,16 @@
   height: rem(90px);
   background: rgba($orange, .5);
   border-radius: 5px;
+  font-family: $Gagalin;
+  color: $white;
   cursor: pointer;
+  z-index: 9999;
   transition: all .3s;
   
   @include tablets {
     top: rem(80px);
   }
   @include phones {
-    left: rem(-30px);
   }
 
   &:hover {
@@ -73,19 +75,22 @@
   bottom: 15%;
   left: rem(20px);
   opacity: .6;
-  background: url(/images/icons/kkal.svg) 50% 27% no-repeat;
+  font-family: $Gagalin;
+  color: $white;
+  background: url(/images/icons/kkal.svg) 50% 50% no-repeat;
   background-size: 60px 60px;
+  z-index: 9999;
 
   @include tablets {
-    background-position: 50% 0;
+    background-position: 50% 40%;
     top: rem(80px);
     right: 0;
     left: auto ;
   }
 
   @include phones {
+    background-position: 50% 10%;
     top: rem(80px);
-    right: rem(-30px);
     left: auto ;
   }
 
@@ -131,7 +136,7 @@
 }
 
 .burger--title {
-  margin-bottom: rem(56px);
+  margin-bottom: 10%;
 
   @include tablets {
     margin-bottom: 2%;
@@ -199,6 +204,7 @@
   border-radius: 5px;
   width: 16.875rem;
   transition: all .3s ease;
+  z-index: 9999;
 
   @include tablets {
     top: 5rem;

@@ -157,119 +157,230 @@
 
     <!-- burgers section -->
     <section class="burgers section" id="burgers">
+      <!-- arrow left -->
       <ul class="slider__container">
         <div class="arrow slider__arrow slider__arrow-left">
           <svg class="arrow">
             <use xlink:href="/images/icons/sprite.svg#arrow-scroll"></use>
           </svg>
         </div>
-        <ul class="slider">
-          <li class="slider__item">
-            <div class="burger">
-              <img src="/images/burgers-slider/burger-1.png" alt="burger" class="burger__img">
-              <div class="burger__composition">
-                <svg class="burger__composition-img">
-                  <use xlink:href="/images/icons/sprite.svg#burger"></use>
-                </svg>
-                <span>состав</span>
-              </div>
-                  <div class="burger__composition-list">
-                    <div class="comp__wrap">
-                      <ul class="comp__list">
-                        <li class="comp__item">
-                          <div class="comp__img">
-                            <svg class="burger__composition-img">
-                              <use xlink:href="/images/icons/sprite.svg#beef"></use>
-                            </svg>
-                          </div>
-                          <span class="comp__name">Говядина</span>
-                          <span class="comp__text">300г</span>
-                        </li>
-                        <li class="comp__item">
-                          <div class="comp__img">
-                            <svg class="burger__composition-img">
-                              <use xlink:href="/images/icons/sprite.svg#buns"></use>
-                            </svg>
-                          </div>
-                          <span class="comp__name">Булочки</span>
-                          <span class="comp__text">100г</span>
-                        </li>
-                        <li class="comp__item">
-                          <div class="comp__img">
-                            <svg class="burger__composition-img">
-                              <use xlink:href="/images/icons/sprite.svg#salad"></use>
-                            </svg>
-                          </div>
-                          <span class="comp__name">Зелень</span>
-                          <span class="comp__text">70г</span>
-                        </li>
-                        <li class="comp__item">
-                          <div class="comp__img">
-                            <svg class="burger__composition-img">
-                              <use xlink:href="/images/icons/sprite.svg#sauce"></use>
-                            </svg>
-                          </div>
-                          <span class="comp__name">Соус</span>
-                          <span class="comp__text">150г</span>
-                        </li>
-                        <li class="comp__item">
-                          <div class="comp__img">
-                            <svg class="burger__composition-img">
-                              <use xlink:href="/images/icons/sprite.svg#cucumber"></use>
-                            </svg>
-                          </div>
-                          <span class="comp__name">Овощи</span>
-                          <span class="comp__text">200г</span>
-                        </li>
-                        <li class="comp__item">
-                          <div class="comp__img">
-                            <svg class="burger__composition-img">
-                              <use xlink:href="/images/icons/sprite.svg#cheese"></use>
-                            </svg>
-                          </div>
-                          <span class="comp__name">Сыр</span>
-                          <span class="comp__text">80г</span>
-                        </li>
-                      </ul>
-                      <button class="btn--close comp__btn">
-                        <span></span>
-                      </button>
-                    </div>
+        <!-- end arrow left -->
+        <div class="slider__wrap" id="slider">
+          <div class="burger__composition">
+            <svg class="burger__composition-img">
+              <use xlink:href="/images/icons/sprite.svg#burger"></use>
+            </svg>
+            <span>состав</span>
+          </div>
+          <div class="burger__composition-list">
+            <div class="comp__wrap">
+              <ul class="comp__list">
+                <li class="comp__item">
+                  <div class="comp__img">
+                    <svg class="burger__composition-img">
+                      <use xlink:href="/images/icons/sprite.svg#beef"></use>
+                    </svg>
                   </div>
-              <div class="burger__weight">
-                <span class="burger__weight--large">1200</span>
-                <span class="burger__weight--kkal">ккал</span>
-              </div>
+                  <span class="comp__name">Говядина</span>
+                  <span class="comp__text">300г</span>
+                </li>
+                <li class="comp__item">
+                  <div class="comp__img">
+                    <svg class="burger__composition-img">
+                      <use xlink:href="/images/icons/sprite.svg#buns"></use>
+                    </svg>
+                  </div>
+                  <span class="comp__name">Булочки</span>
+                  <span class="comp__text">100г</span>
+                </li>
+                <li class="comp__item">
+                  <div class="comp__img">
+                    <svg class="burger__composition-img">
+                      <use xlink:href="/images/icons/sprite.svg#salad"></use>
+                    </svg>
+                  </div>
+                  <span class="comp__name">Зелень</span>
+                  <span class="comp__text">70г</span>
+                </li>
+                <li class="comp__item">
+                  <div class="comp__img">
+                    <svg class="burger__composition-img">
+                      <use xlink:href="/images/icons/sprite.svg#sauce"></use>
+                    </svg>
+                  </div>
+                  <span class="comp__name">Соус</span>
+                  <span class="comp__text">150г</span>
+                </li>
+                <li class="comp__item">
+                  <div class="comp__img">
+                    <svg class="burger__composition-img">
+                      <use xlink:href="/images/icons/sprite.svg#cucumber"></use>
+                    </svg>
+                  </div>
+                  <span class="comp__name">Овощи</span>
+                  <span class="comp__text">200г</span>
+                </li>
+                <li class="comp__item">
+                  <div class="comp__img">
+                    <svg class="burger__composition-img">
+                      <use xlink:href="/images/icons/sprite.svg#cheese"></use>
+                    </svg>
+                  </div>
+                  <span class="comp__name">Сыр</span>
+                  <span class="comp__text">80г</span>
+                </li>
+              </ul>
+              <button class="btn--close comp__btn">
+                <span></span>
+              </button>
             </div>
-            <div class="burger__desc">
-              <h2 class="title title--white burger--title">
-                Dark BEEF Burger
-              </h2>
-              <div class="burger__text">
-                <p>
-                  Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины,
-                  тремя кусочками нежнейшего сыра эмменталь, двумя помидорами,
-                  луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
-                </p>
+          </div>
+          <div class="burger__weight">
+            <span class="burger__weight--large">1200</span>
+            <span class="burger__weight--kkal">ккал</span>
+          </div>
+          <ul class="slider">
+            <li class="slider__item">
+              <div class="burger">
+                <img src="/images/burgers-slider/burger-1.png" alt="burger" class="burger__img">
               </div>
-              <div class="burger__order">
-                <div class="burger__cost">
-                  <span class="title title--orange">500</span>
-                  <span>рублей</span>
+              <div class="burger__desc">
+                <h2 class="title title--white burger--title">
+                  Dark BEEF Burger
+                </h2>
+                <div class="burger__text">
+                  <p>
+                    Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины,
+                    тремя кусочками нежнейшего сыра эмменталь, двумя помидорами,
+                    луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+                  </p>
                 </div>
-                <a href="#order" class="btn btn--red">
-                  <span>заказать</span>
-                </a>
+                <div class="burger__order">
+                  <div class="burger__cost">
+                    <span class="title title--orange">500</span>
+                    <span>рублей</span>
+                  </div>
+                  <a href="#order" class="btn btn--red">
+                    <span>заказать</span>
+                  </a>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+            <li class="slider__item">
+              <div class="burger">
+                <img src="/images/burgers-slider/burger_sandwich_PNG4124.png" alt="burger" class="burger__img">
+              </div>
+              <div class="burger__desc">
+                <h2 class="title title--white burger--title">
+                  Burger sandwich
+                </h2>
+                <div class="burger__text">
+                  <p>
+                    Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины,
+                    тремя кусочками нежнейшего сыра эмменталь, двумя помидорами,
+                    луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+                  </p>
+                </div>
+                <div class="burger__order">
+                  <div class="burger__cost">
+                    <span class="title title--orange">500</span>
+                    <span>рублей</span>
+                  </div>
+                  <a href="#order" class="btn btn--red">
+                    <span>заказать</span>
+                  </a>
+                </div>
+              </div>
+            </li>
 
+            <li class="slider__item">
+              <div class="burger">
+                <img src="/images/burgers-slider/Chiken burger.png" alt="burger" class="burger__img">
+              </div>
+              <div class="burger__desc">
+                <h2 class="title title--white burger--title">
+                  Chiken burger
+                </h2>
+                <div class="burger__text">
+                  <p>
+                    Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины,
+                    тремя кусочками нежнейшего сыра эмменталь, двумя помидорами,
+                    луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+                  </p>
+                </div>
+                <div class="burger__order">
+                  <div class="burger__cost">
+                    <span class="title title--orange">500</span>
+                    <span>рублей</span>
+                  </div>
+                  <a href="#order" class="btn btn--red">
+                    <span>заказать</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="slider__item">
+              <div class="burger">
+                <img src="/images/burgers-slider/NYC-Diner-Bacon-Cheeseburger.png" alt="burger" class="burger__img">
+              </div>
+              <div class="burger__desc">
+                <h2 class="title title--white burger--title">
+                  NYC Cheese burger
+                </h2>
+                <div class="burger__text">
+                  <p>
+                    Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины,
+                    тремя кусочками нежнейшего сыра эмменталь, двумя помидорами,
+                    луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+                  </p>
+                </div>
+                <div class="burger__order">
+                  <div class="burger__cost">
+                    <span class="title title--orange">500</span>
+                    <span>рублей</span>
+                  </div>
+                  <a href="#order" class="btn btn--red">
+                    <span>заказать</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="slider__item">
+              <div class="burger">
+                <img src="/images/burgers-slider/Spicy_Shrimp_Burger.png" alt="burger" class="burger__img">
+              </div>
+              <div class="burger__desc">
+                <h2 class="title title--white burger--title">
+                  Spicy Shrimp Burger
+                </h2>
+                <div class="burger__text">
+                  <p>
+                    Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины,
+                    тремя кусочками нежнейшего сыра эмменталь, двумя помидорами,
+                    луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+                  </p>
+                </div>
+                <div class="burger__order">
+                  <div class="burger__cost">
+                    <span class="title title--orange">500</span>
+                    <span>рублей</span>
+                  </div>
+                  <a href="#order" class="btn btn--red">
+                    <span>заказать</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- arrow right -->
         <div class="arrow slider__arrow slider__arrow-right">
           <svg class="arrow">
             <use xlink:href="/images/icons/sprite.svg#arrow-scroll"></use>
           </svg>
         </div>
+      </ul>
+      <!-- end arrow right -->
     </section>
     <!-- end burgers section -->
 
@@ -500,7 +611,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-4.png)">
           <div class="review-block__list">
             <span class="review-block__name">
-              Мэтью Макконахи
+              Мэтью
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -522,7 +633,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-5.png)">
           <div class="review-block__list">
             <span class="review-block__name">
-              Какой-то парень
+              Константин Спилберг
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -544,7 +655,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-6.png)">
           <div class="review-block__list">
             <span class="review-block__name">
-              Ария Старк
+              Константин Спилберг
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -566,7 +677,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-7.png)">
           <div class="review-block__list">
             <span class="review-block__name">
-              Гендальф
+              Константин Спилберг
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -588,7 +699,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-8.png)">
           <div class="review-block__list">
             <span class="review-block__name">
-              Бородатый мужик
+              Константин Спилберг
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.

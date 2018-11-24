@@ -47,13 +47,26 @@
 
 .slider {
   display: flex;
+  position: relative;
+  width: 100%;
+  right: 0;
+  will-change: right;
+  transition: all .5s;
+}
+
+.slider__wrap {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .slider__item {
+  position: relative;
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  height: 100%;
   width: 100%;
     
   @include tablets {

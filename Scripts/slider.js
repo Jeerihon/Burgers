@@ -1,12 +1,44 @@
-  //slider
+//slider
 
-  const prevBtn = document.querySelector('.slider__arrow-left'),
-        nextBtn = document.querySelector('.slider__arrow-right');
+const left = document.querySelector('.slider__arrow-left'),
+      right = document.querySelector('.slider__arrow-right'),
+      items = document.querySelector('.slider'),
+      computed = getComputedStyle(items),
+      step = parseInt(getComputedStyle(items.firstElementChild).width),
+      size = items.children.length - 1,
+      maxRight = size * step,
+      minRight = 0;
 
-  prevBtn.addEventListener('click', (e) => {
-    console.log('prev');
-  })
+right.addEventListener("click", function (e) {
+  e.preventDefault();
+  let currentRight = parseInt(computed.right);
 
-  nextBtn.addEventListener('click', (e) => {
-    console.log('next');
-  })
+  if (!currentRight) {
+    currentRight = 0;
+  }
+
+  if (currentRight < maxRight) {
+    items.style.right = currentRight + step + "px";
+  } else {
+    currentRight = 0;
+    items.style.right = minRight;
+  }
+
+});
+
+left.addEventListener("click", function (e) {
+  e.preventDefault();
+  let currentRight = parseInt(computed.right);
+
+  if (!currentRight) {
+    currentRight = 0;
+  }
+
+  if (currentRight > minRight) {
+    items.style.right = currentRight - step + "px";
+  } else {
+    currentRight = maxRight;
+    items.style.right = maxRight;
+  }
+
+});
