@@ -433,7 +433,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-1.png);">
           <div class="review-block__list">
             <span class="review-block__name">
-              Константин Спилберг
+              Наташа Романоф
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -464,7 +464,6 @@
               могут быть такими мягкими, котлетка такой сочной,
               а сыр таким расплавленным.
 
-              asdasdasd
             </p>
             <button class="btn review-block__btn btn--black" type="button">
               подробнее
@@ -479,7 +478,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-3@2x.jpg);">
           <div class="review-block__list">
             <span class="review-block__name">
-              Константин Спилберг
+              Лили Харпер
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -501,7 +500,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-4.png)">
           <div class="review-block__list">
             <span class="review-block__name">
-              Константин Спилберг
+              Мэтью Макконахи
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -523,7 +522,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-5.png)">
           <div class="review-block__list">
             <span class="review-block__name">
-              Константин Спилберг
+              Какой-то парень
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -545,7 +544,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-6.png)">
           <div class="review-block__list">
             <span class="review-block__name">
-              Константин Спилберг
+              Ария Старк
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -567,7 +566,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-7.png)">
           <div class="review-block__list">
             <span class="review-block__name">
-              Константин Спилберг
+              Гендальф
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -589,7 +588,7 @@
         <div class="review-block__img" style="background-image: url(/images/avatar-8.png)">
           <div class="review-block__list">
             <span class="review-block__name">
-              Константин Спилберг
+              Бородатый мужик
             </span>
             <p class="review-block__text">
               Мысли все о них и о них, о них и о них.
@@ -625,7 +624,7 @@
               </label>
               <label for="number" class="form__item">
                 <span class="form__name">Телефон</span>
-                <input class="form__item-input" type="text" id="number" placeholder="89212264923" tabindex="2">
+                <input class="form__item-input onlyDigit" type="text" id="number" placeholder="89212264923" tabindex="2">
               </label>
             </div>
             <div class="form__row">
@@ -637,19 +636,19 @@
             <div class="form__row">
               <label for="house" class="form__item">
                 <span class="form__name">Дом</span>
-                <input class="form__item-input" type="text" id="house" tabindex="4">
+                <input class="form__item-input onlyDigit" type="text" id="house" tabindex="4">
               </label>
               <label for="housing" class="form__item">
                 <span class="form__name">Корпус</span>
-                <input class="form__item-input" type="text" id="housing" tabindex="5">
+                <input class="form__item-input onlyDigit" type="text" id="housing" tabindex="5">
               </label>
               <label for="flat" class="form__item">
                 <span class="form__name">Квартира</span>
-                <input class="form__item-input" type="text" id="flat" tabindex="6">
+                <input class="form__item-input onlyDigit" type="text" id="flat" tabindex="6">
               </label>
               <label for="floor" class="form__item">
                 <span class="form__name">Этаж</span>
-                <input class="form__item-input" type="text" id="floor" tabindex="7">
+                <input class="form__item-input onlyDigit" type="text" id="floor" tabindex="7">
               </label>
             </div>
           </div>
@@ -657,7 +656,7 @@
             <div class="form__row form__row--text">
               <label for="floor" class="form__item form__text">
                 <span class="form__name">Коментарий</span>
-                <textarea class="form__item-input form__item-text" id="floor" tabindex="7"></textarea>
+                <textarea class="form__item-input form__item-text" id="comment" tabindex="7"></textarea>
               </label>
             </div>
             <div class="form__row form__row--options">
@@ -677,7 +676,7 @@
               </label>
             </div>
             <div class="form__row form__row--options">
-              <button class="btn btn--red form__button" type="submit">
+              <button class="btn btn--red form__button" type="submit" id="sendBtn">
                 <span>заказать</span>
               </button>
               <button class="form__button form__button--reset" type="reset">
@@ -800,6 +799,7 @@
   <script src="/Scripts/acc.js"></script>
   <script src="/Scripts/slider.js"></script>
   <script src="/Scripts/overlay.js"></script>
+  <script src="/Scripts/order.js"></script>
   <!-- end scripts -->
 </body>
 

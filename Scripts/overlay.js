@@ -1,33 +1,31 @@
 // // overlay
 
 const openButtons = document.querySelectorAll(".review-block__btn"),
-      reviewsSection = document.querySelector('#reviews'),
-      nameBlocks = document.querySelectorAll('.review-block__name'),
-      textBlocks = document.querySelectorAll('.review-block__text'),
-      name = getTextContent(nameBlocks),
-      text = getTextContent(textBlocks), 
-      reviewOverlay = createOverlay(name, text);
+  reviewsSection = document.querySelector('#reviews'),
+  nameBlocks = document.querySelectorAll('.review-block__name'),
+  textBlocks = document.querySelectorAll('.review-block__text');
 
-      
-      for (let i = 0; i < openButtons.length; i++) {
-        const element = openButtons[i];
-        
-        element.addEventListener("click", function() {
-          reviewsSection.appendChild(reviewOverlay);
-        });
-      };
-      
+
+for (let i = 0; i < openButtons.length; i++) {
+  const element = openButtons[i];
+
+  element.addEventListener("click", function () {
+    const name = element.parentNode.children[0].textContent,
+          text = element.parentNode.children[1].textContent;
+
+    reviewsSection.appendChild(createOverlay(name, text));
+  });
+};
+
 function getTextContent(element) {
-  let content;
   for (let i = 0; i < element.length; i++) {
     const item = element[i];
 
-    content = item.textContent;
-    console.log(content)
+    const content = item.textContent;
+    return content;
   };
-  return content;
 }
-      
+
 function createOverlay(name, text) {
   const overlayElement = document.createElement("div");
   overlayElement.classList.add("overlay");
@@ -36,7 +34,7 @@ function createOverlay(name, text) {
   overlayElement.innerHTML = template.innerHTML;
 
   const closeElement = overlayElement.querySelector(".overlay__close");
-  closeElement.addEventListener("click", function() {
+  closeElement.addEventListener("click", function () {
     reviewsSection.removeChild(overlayElement);
   });
 
