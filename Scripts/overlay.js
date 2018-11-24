@@ -8,8 +8,6 @@ for (let i = 0; i < openButtons.length; i++) {
   const element = openButtons[i];
 
   element.addEventListener("click", function () {
-    // const name = element.parentNode.children[0].textContent,
-    //       text = element.parentNode.children[1].textContent;
     const elements = element.parentNode.children;
     let name, 
         text;
