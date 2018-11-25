@@ -38,6 +38,11 @@ function createOverlay(name, text) {
     reviewsSection.removeChild(overlayElement);
   });
 
+  const wrapElement = overlayElement.querySelector(".overlay__wrap");
+  wrapElement.addEventListener("click", function () {
+    reviewsSection.removeChild(overlayElement);
+  });
+
   const nameElement = overlayElement.querySelector(".overlay__name");
   nameElement.innerHTML = name;
 

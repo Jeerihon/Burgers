@@ -4,14 +4,8 @@ const myForm = document.querySelector('.form'),
   sendBtn = document.querySelector('#sendBtn'),
   name = myForm.elements.name,
   phone = myForm.elements.phone,
-  street = myForm.elements.street,
   comment = myForm.elements.comment,
-  house = myForm.elements.house,
-  housing = myForm.elements.housing,
-  flat = myForm.elements.flat,
-  floor = myForm.elements.floor,
-  paymentButtons = myForm.elements.payment,
-  recallCheck = myForm.elements.recall;
+  orderSection = document.querySelector('#order');
 
 
 name.addEventListener('keydown', function (event) {
@@ -63,35 +57,23 @@ sendBtn.addEventListener('click', event => {
   event.preventDefault();
 
   if (validateForm(myForm)) {
-    let formData = new FormData();
-    formData.append('name', myForm.elements.name.value);
-    formData.append('phone', myForm.elements.phone.value);
-    formData.append('comment', myForm.elements.comment.value);
-    formData.append('to', 'mail@mail.com');
-
-    // let data = {
-    //   name: myForm.elements.name.value,
-    //   phone: myForm.elements.phone.value,
-    //   comment: myForm.elements.comment.value,
-    //   to: 'me@me.com'
-    // }
-    console.log(formData);
+    let formData = new FormData(myForm);
+    formData.append("name", myForm.elements.name.value);
+    formData.append("phone", myForm.elements.phone.value);
+    formData.append("comment", myForm.elements.comment.value);
+    formData.append("to", 'mail@mail.com');
 
     const xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-    xhr.send(JSON.stringify(formData));
+    xhr.send(formData);
     xhr.addEventListener('load', () => {
       if (xhr.response.status) {
-        console.log(xhr.responseText)
-      } else {
-        console.log(xhr.responseText)
+        const message = xhr.response.message;
+        orderSection.appendChild(createResponse(message));
       }
     });
   };
-
-
-
   // // payment input check
   // if (paymentButtons[0].checked) {
   //   console.log("Потребуется сдача");
@@ -133,3 +115,26 @@ function validateField(field) {
   }
   return field.checkValidity();
 };
+
+function createResponse(text) {
+  const overlayElement = document.createElement("div");
+  overlayElement.classList.add("overlay");
+
+  const template = document.querySelector("#responseTemplate");
+  overlayElement.innerHTML = template.innerHTML;
+
+  const closeElement = overlayElement.querySelector(".overlay__close--response");
+  closeElement.addEventListener("click", function () {
+    orderSection.removeChild(overlayElement);
+  });
+
+  const wrapElement = overlayElement.querySelector(".overlay__wrap");
+  wrapElement.addEventListener("click", function () {
+    orderSection.removeChild(overlayElement);
+  });
+
+  const messageElement = overlayElement.querySelector(".overlay__message");
+  messageElement.innerHTML = text;
+
+  return overlayElement;
+}
