@@ -731,11 +731,13 @@
             <div class="form__row">
               <label for="name" class="form__item">
                 <span class="form__name">Имя</span>
-                <input class="form__item-input" type="text" id="name" tabindex="1">
+                <input class="form__item-input" type="text" id="name" tabindex="1" required>
+                <div class="form__error"></div>
               </label>
               <label for="number" class="form__item">
                 <span class="form__name">Телефон</span>
-                <input class="form__item-input onlyDigit" type="text" id="number" placeholder="89212264923" tabindex="2">
+                <input class="form__item-input onlyDigit" type="text" id="phone" placeholder="89212264923" tabindex="2" maxlength="11" required>
+                <div class="form__error"></div>
               </label>
             </div>
             <div class="form__row">
@@ -767,7 +769,8 @@
             <div class="form__row form__row--text">
               <label for="floor" class="form__item form__text">
                 <span class="form__name">Коментарий</span>
-                <textarea class="form__item-input form__item-text" id="comment" tabindex="7"></textarea>
+                <textarea class="form__item-input form__item-text" name="comment" id="comment" tabindex="7" required></textarea>
+                <div class="form__error"></div>
               </label>
             </div>
             <div class="form__row form__row--options">

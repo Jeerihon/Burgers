@@ -20,8 +20,7 @@ for (let i = 0; i < openButtons.length; i++) {
       if (element.classList.contains('review-block__text')) {
         text = element.textContent
       };
-
-    }
+    };
 
     reviewsSection.appendChild(createOverlay(name, text));
   });
