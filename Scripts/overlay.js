@@ -23,6 +23,7 @@ for (let i = 0; i < openButtons.length; i++) {
     };
 
     reviewsSection.appendChild(createOverlay(name, text));
+    document.body.style.overflow = 'hidden';
   });
 };
 
@@ -36,11 +37,13 @@ function createOverlay(name, text) {
   const closeElement = overlayElement.querySelector(".overlay__close");
   closeElement.addEventListener("click", function () {
     reviewsSection.removeChild(overlayElement);
+    document.body.style.overflow = 'initial';
   });
 
   const wrapElement = overlayElement.querySelector(".overlay__wrap");
   wrapElement.addEventListener("click", function () {
     reviewsSection.removeChild(overlayElement);
+    document.body.style.overflow = 'initial';
   });
 
   const nameElement = overlayElement.querySelector(".overlay__name");

@@ -71,20 +71,10 @@ sendBtn.addEventListener('click', event => {
       if (xhr.response.status) {
         const message = xhr.response.message;
         orderSection.appendChild(createResponse(message));
+        document.body.style.overflow = 'hidden';
       }
     });
   };
-  // // payment input check
-  // if (paymentButtons[0].checked) {
-  //   console.log("Потребуется сдача");
-  // } else {
-  //   console.log("Оплата по карте");
-  // };
-
-  // // recall input check
-  // if (recallCheck.checked) {
-  //   console.log('Обратный звонок не нужен');
-  // };
 });
 
 function validateForm(form) {
@@ -126,11 +116,13 @@ function createResponse(text) {
   const closeElement = overlayElement.querySelector(".overlay__close--response");
   closeElement.addEventListener("click", function () {
     orderSection.removeChild(overlayElement);
+    document.body.style.overflow = 'initial';
   });
 
   const wrapElement = overlayElement.querySelector(".overlay__wrap");
   wrapElement.addEventListener("click", function () {
     orderSection.removeChild(overlayElement);
+    document.body.style.overflow = 'initial';
   });
 
   const messageElement = overlayElement.querySelector(".overlay__message");

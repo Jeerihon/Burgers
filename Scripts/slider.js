@@ -22,7 +22,7 @@ right.addEventListener("click", function (e) {
   } else {
     currentRight = 0;
     items.style.right = minRight;
-  }
+  };
 
 });
 
@@ -36,9 +36,9 @@ left.addEventListener("click", function (e) {
 
   if (currentRight > minRight) {
     items.style.right = currentRight - step + "px";
-  } else {
+  };
+  if (currentRight == 0) {
     currentRight = maxRight;
-    items.style.right = maxRight;
-  }
-
+    items.style.right = maxRight + "px";
+  };
 });
