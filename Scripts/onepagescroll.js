@@ -84,8 +84,64 @@ $(function () {
 
   //touch slide
 
-  $('.wrapper').on('t')
+  // $('.wrapper').swipe({
+  //   swipeStatus: function (event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
+  //     let $this = $(this),
+  //       container = $this.closest('.wrapper'),
+  //       items = $('.section', container),
+  //       activeItem = items.filter('.active'),
+  //       nextItem = activeItem.next(),
+  //       prevItem = activeItem.prev(),
+  //       existedItem, edgeItem, reqItem;
 
+  //     if (phase == "end") {
+  //       //сработает через 20 пикселей то число которое выбрали в threshold
+  //       if (direction == 'up') {
+  //         existedItem = activeItem.prev(),
+  //           edgeItem = items.last(),
+  //           reqItem = existedItem.length ? existedItem.index() : edgeItem.index(); //сработает при движении вверх
+  //       }
+  //       if (direction == 'down') {
+  //         existedItem = activeItem.next(),
+  //           edgeItem = items.first(),
+  //           reqItem = existedItem.length ? existedItem.index() : edgeItem.index();  //сработает при движении вниз
+  //       }
+
+
+  //       moveSection(container, reqItem);
+  //     }
+  //     triggerOnTouchEnd:false,
+  //     threshold:20
+  //   }
+  // });
+  $(".wrapper").swipe({
+    //Single swipe handler for left swipes
+    swipeUp: function (event, direction, distance, duration, fingerCount) {
+      var $this = $(this),
+      container = $this.closest('.wrapper'),
+      items = $('.section', container),
+      activeItem = items.filter('.active'),
+      existedItem, edgeItem, reqItem;
+      existedItem = activeItem.next(),
+        edgeItem = items.first(),
+        reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
+
+        moveSection(container, reqItem);
+    },
+    swipeDown: function (event, direction, distance, duration, fingerCount) {
+      var $this = $(this),
+      container = $this.closest('.wrapper'),
+      items = $('.section', container),
+      activeItem = items.filter('.active'),
+      existedItem, edgeItem, reqItem;
+      existedItem = activeItem.prev(),
+        edgeItem = items.last();
+        reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
+
+        moveSection(container, reqItem);
+    },
+    threshold: 75
+  });
 
   // quick clicks protection
 
