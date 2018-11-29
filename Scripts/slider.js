@@ -26,16 +26,16 @@ var timerID = setInterval(function () {
 // move to right slide
 right.addEventListener("click", function (e) {
   e.preventDefault();
-  moveRight();
 
+  moveRight();
   clearInterval(timerID);
 });
 
 // move to left slide
 left.addEventListener("click", function (e) {
   e.preventDefault();
-  moveLeft();
 
+  moveLeft();
   clearInterval(timerID);
 });
 
@@ -64,6 +64,7 @@ function moveLeft() {
 
   if (flag) {
     flag = false
+    
     if (!currentRight) {
       currentRight = 0;
     }
