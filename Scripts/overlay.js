@@ -1,7 +1,8 @@
 // // overlay
 
 const openButtons = document.querySelectorAll(".review-block__btn"),
-  reviewsSection = document.querySelector('#reviews');
+  reviewsSection = document.querySelector('#reviews'),
+  overlayContainer = document.querySelector('body');
 
 
 for (let i = 0; i < openButtons.length; i++) {
@@ -10,7 +11,7 @@ for (let i = 0; i < openButtons.length; i++) {
   element.addEventListener("click", function () {
     const elements = element.parentNode.children;
     let name, 
-        text;
+    text;
 
     for (let i = 0; i < elements.length; i++) {
       const element = elements[i];
@@ -22,8 +23,8 @@ for (let i = 0; i < openButtons.length; i++) {
       };
     };
 
-    reviewsSection.appendChild(createOverlay(name, text));
-    document.body.style.overflow = 'hidden';
+    body.appendChild(createOverlay(name, text));
+    // reviewsSection.appendChild(createOverlay(name, text));
   });
 };
 
@@ -36,14 +37,12 @@ function createOverlay(name, text) {
 
   const closeElement = overlayElement.querySelector(".overlay__close");
   closeElement.addEventListener("click", function () {
-    reviewsSection.removeChild(overlayElement);
-    document.body.style.overflow = 'initial';
+    overlayContainer.removeChild(overlayElement);
   });
 
   const wrapElement = overlayElement.querySelector(".overlay__wrap");
   wrapElement.addEventListener("click", function () {
-    reviewsSection.removeChild(overlayElement);
-    document.body.style.overflow = 'initial';
+    overlayContainer.removeChild(overlayElement);
   });
 
   const nameElement = overlayElement.querySelector(".overlay__name");

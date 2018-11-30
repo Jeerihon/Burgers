@@ -21,17 +21,15 @@ $(function () {
   generateDots();
 
 
-
   // dots click
   $('body').on('click', '.dots__item', function () {
     var $this = $(this),
       container = $this.closest('.wrapper'),
       index = $this.index();
 
-    moveSection(container, index);
+    moveSection(index);
     activateDot(index);
   })
-
 
 
   // activate dot 
@@ -53,12 +51,12 @@ $(function () {
       activeItem = items.filter('.active'),
       nextItem = activeItem.next();
     console.log('tap')
-    moveSection(container, nextItem.index());
+    moveSection(nextItem.index());
   });
 
   // mousewheel action
   $('.wrapper').on('mousewheel DOMMouseScroll', function (e) {
-    var deltaY = e.originalEvent.wheelDelta,
+    let deltaY = e.originalEvent.wheelDelta,
       mozDeltaY = e.originalEvent.detail,
       $this = $(this),
       container = $this.closest('.wrapper'),
@@ -66,70 +64,73 @@ $(function () {
       activeItem = items.filter('.active'),
       nextItem = activeItem.next(),
       prevItem = activeItem.prev(),
-      existedItem, edgeItem, reqItem;
+      edgeItem = items.first(),
+      existedItem, reqItem;
 
     if (deltaY < 0 || mozDeltaY > 0) { // scroll down
-      existedItem = activeItem.next(),
-        edgeItem = items.first();
+      existedItem = nextItem;
     };
 
     if (deltaY > 0 || mozDeltaY < 0) { //scroll up
-      existedItem = activeItem.prev(),
-        edgeItem = items.last();
+      existedItem = prevItem;
     };
-
+    
     reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
-
-    moveSection(container, reqItem);
+    moveSection(reqItem);
   });
 
-  //touch slide
-  $(".wrapper").swipe({
-    //Single swipe handler for left swipes
-    swipeUp: function (event, direction, distance, duration, fingerCount) {
-      var $this = $(this),
-      container = $this.closest('.wrapper'),
-      items = $('.section', container),
-      activeItem = items.filter('.active'),
-      existedItem, edgeItem, reqItem;
-      existedItem = activeItem.next(),
-        edgeItem = items.first(),
-        reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
 
-        moveSection(container, reqItem);
-    },
-    swipeDown: function (event, direction, distance, duration, fingerCount) {
-      var $this = $(this),
-      container = $this.closest('.wrapper'),
-      items = $('.section', container),
-      activeItem = items.filter('.active'),
-      existedItem, edgeItem, reqItem;
-      existedItem = activeItem.prev(),
-        edgeItem = items.last();
-        reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
+  //swipe action
+  $(function () {
+    // Enable swiping...
+    $(".section").swipe({
+      swipeStatus: function (event, phase, direction, distance) {
+        if (phase == "end")
+          if (direction == 'up') { // swipe up
+            var items = $('.section'),
+              activeItem = items.filter('.active'),
+              existedItem = activeItem.next(),
+              edgeItem = items.first(),
+              existedItem, edgeItem, reqItem;
 
-        moveSection(container, reqItem);
-    },
-    threshold: 75
+            reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
+
+            moveSection(reqItem);
+          }
+        if (direction == 'down') { // swipe down
+          var items = $('.section'),
+            activeItem = items.filter('.active'),
+            existedItem = activeItem.prev(),
+            edgeItem = items.first(),
+            existedItem, edgeItem, reqItem;
+
+          reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
+
+          moveSection(reqItem);
+        }
+      },
+      triggerOnTouchEnd: false,
+      threshold: 100
+    });
   });
+
 
   // quick clicks protection
-
   var flag = true;
 
   var changeFlag = function () {
     setTimeout(function () {
       flag = true;
-    }, 500);
+    }, 700);
   }
 
 
-  var moveSection = function (container, sectionNum) {
+  var moveSection = function (sectionNum) {
     const items = list.find('.section'),
       activeSection = items.filter('.active'),
       reqItem = items.eq(sectionNum),
       reqIndex = reqItem.index(),
-      duration = 500;
+      duration = 700;
 
     if (flag) {
 
@@ -137,7 +138,7 @@ $(function () {
 
       if (reqItem.length) {
         list.animate({
-          'top': -reqIndex * 100 + 'vh'
+          'top': -reqIndex * 100 + '%'
         }, duration, function () {
           activeSection.removeClass('active');
           reqItem.addClass('active');

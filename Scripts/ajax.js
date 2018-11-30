@@ -5,7 +5,7 @@ const myForm = document.querySelector('.form'),
   name = myForm.elements.name,
   phone = myForm.elements.phone,
   comment = myForm.elements.comment,
-  orderSection = document.querySelector('#order');
+  body = document.querySelector('body');
 
 
 name.addEventListener('keydown', function (event) {
@@ -70,7 +70,7 @@ sendBtn.addEventListener('click', event => {
     xhr.addEventListener('load', () => {
       if (xhr.response.status) {
         const message = xhr.response.message;
-        orderSection.appendChild(createResponse(message));
+        body.appendChild(createResponse(message));
         document.body.style.overflow = 'hidden';
       }
     });
@@ -115,14 +115,12 @@ function createResponse(text) {
 
   const closeElement = overlayElement.querySelector(".overlay__close--response");
   closeElement.addEventListener("click", function () {
-    orderSection.removeChild(overlayElement);
-    document.body.style.overflow = 'initial';
+    body.removeChild(overlayElement);
   });
 
   const wrapElement = overlayElement.querySelector(".overlay__wrap");
   wrapElement.addEventListener("click", function () {
-    orderSection.removeChild(overlayElement);
-    document.body.style.overflow = 'initial';
+    body.removeChild(overlayElement);
   });
 
   const messageElement = overlayElement.querySelector(".overlay__message");
