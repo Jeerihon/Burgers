@@ -46,19 +46,20 @@ $(function () {
 
 
   // click on arrow in hero section
-  $('.arrow--scroll').on('click tap', function () {
+  $('.hero-bottom').on('click touch', function () {
     var $this = $(this),
       container = $this.closest('.wrapper'),
       items = $('.section', container),
       activeItem = items.filter('.active'),
       nextItem = activeItem.next();
-      
+    console.log('tap')
     moveSection(container, nextItem.index());
   });
 
   // mousewheel action
   $('.wrapper').on('mousewheel DOMMouseScroll', function (e) {
-    var delta = e.originalEvent.wheelDelta,
+    var deltaY = e.originalEvent.wheelDelta,
+      mozDeltaY = e.originalEvent.detail,
       $this = $(this),
       container = $this.closest('.wrapper'),
       items = $('.section', container),
@@ -67,12 +68,12 @@ $(function () {
       prevItem = activeItem.prev(),
       existedItem, edgeItem, reqItem;
 
-    if (delta < 0) { // scroll down
+    if (deltaY < 0 || mozDeltaY > 0) { // scroll down
       existedItem = activeItem.next(),
         edgeItem = items.first();
     };
 
-    if (delta > 0) { //scroll up
+    if (deltaY > 0 || mozDeltaY < 0) { //scroll up
       existedItem = activeItem.prev(),
         edgeItem = items.last();
     };
@@ -81,7 +82,6 @@ $(function () {
 
     moveSection(container, reqItem);
   });
-
 
   //touch slide
   $(".wrapper").swipe({
@@ -110,7 +110,7 @@ $(function () {
 
         moveSection(container, reqItem);
     },
-    threshold: 0
+    threshold: 75
   });
 
   // quick clicks protection
