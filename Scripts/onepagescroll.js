@@ -46,13 +46,13 @@ $(function () {
 
 
   // click on arrow in hero section
-  $('.arrow--scroll').on('click', function () {
+  $('.arrow--scroll').on('click tap', function () {
     var $this = $(this),
       container = $this.closest('.wrapper'),
       items = $('.section', container),
       activeItem = items.filter('.active'),
       nextItem = activeItem.next();
-
+      
     moveSection(container, nextItem.index());
   });
 
