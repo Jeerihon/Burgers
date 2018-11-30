@@ -138,7 +138,7 @@ $(function () {
 
       if (reqItem.length) {
         list.animate({
-          'top': -reqIndex * 100 + '%'
+          'top': -reqIndex * 100 + 'vh'
         }, duration, function () {
           activeSection.removeClass('active');
           reqItem.addClass('active');
