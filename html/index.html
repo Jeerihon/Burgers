@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link rel="stylesheet" href="/css/main.css">
+
   <title>My burger</title>
 </head>
 
@@ -1099,8 +1100,7 @@
     <!-- contacts section -->
     <section class="contacts section" id="contacts">
       <!-- interactive map -->
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31647.858267043197!2d30.285535813060466!3d59.947277760784644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696313f9cb68a9d%3A0x863f295f902a26d5!2z0JvQtdC90LjQvdCz0YDQsNC00YHQutC40Lkg0LfQvtC-0L_QsNGA0Lo!5e0!3m2!1sru!2sru!4v1541932237142"
-        width="100%" height="90.8%" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <div id="map" class="map" style="width: 100%; height: 90.8%"></div>
       <!-- end interactive map -->
 
       <!-- footer -->
@@ -1188,6 +1188,9 @@
   <!-- jquaery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/Scripts/jquery.touchSwipe.min.js"></script>
+  <!-- yandex map api -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=a339fef4-2d18-47bc-b48e-d922c32c8f12&lang=ru_RU" type="text/javascript"></script>
+  <script src="/Scripts/map.js"></script>
   <!-- scripts -->
   <script src="/Scripts/nav.js"></script>
   <script src="/Scripts/menu.js"></script>

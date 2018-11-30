@@ -50,7 +50,7 @@ $(function () {
       items = $('.section', container),
       activeItem = items.filter('.active'),
       nextItem = activeItem.next();
-    console.log('tap')
+
     moveSection(nextItem.index());
   });
 
@@ -64,7 +64,6 @@ $(function () {
       activeItem = items.filter('.active'),
       nextItem = activeItem.next(),
       prevItem = activeItem.prev(),
-      edgeItem = items.first(),
       existedItem, reqItem;
 
     if (deltaY < 0 || mozDeltaY > 0) { // scroll down
@@ -74,8 +73,8 @@ $(function () {
     if (deltaY > 0 || mozDeltaY < 0) { //scroll up
       existedItem = prevItem;
     };
-    
-    reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
+
+    reqItem = existedItem.length ? existedItem.index() : items.first();
     moveSection(reqItem);
   });
 
@@ -85,43 +84,65 @@ $(function () {
     // Enable swiping...
     $(".section").swipe({
       swipeStatus: function (event, phase, direction, distance) {
-        if (phase == "end")
-          if (direction == 'up') { // swipe up
-            var items = $('.section'),
-              activeItem = items.filter('.active'),
-              existedItem = activeItem.next(),
-              edgeItem = items.first(),
-              existedItem, edgeItem, reqItem;
-
-            reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
-
-            moveSection(reqItem);
-          }
-        if (direction == 'down') { // swipe down
+        if (phase == "end") {
           var items = $('.section'),
             activeItem = items.filter('.active'),
-            existedItem = activeItem.prev(),
-            edgeItem = items.first(),
-            existedItem, edgeItem, reqItem;
+            nextItem = activeItem.next(),
+            prevItem = activeItem.prev(),
+            existedItem, reqItem;
 
-          reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
+          if (direction == 'up') { // swipe up
+            existedItem = nextItem;
+          }
 
+          if (direction == 'down') { // swipe down
+            existedItem = prevItem;
+          }
+
+          reqItem = existedItem.length ? existedItem.index() : items.first();
           moveSection(reqItem);
-        }
+        };
       },
       triggerOnTouchEnd: false,
       threshold: 100
     });
   });
 
+  // key action
+
+  $(document).on('keydown', e => {
+    let items = $('.section'),
+      activeItem = items.filter('.active'),
+      nextItem = activeItem.next(),
+      prevItem = activeItem.prev(),
+      existedItem, reqItem;
+
+    switch (e.keyCode) {
+      case 40:
+        // function action
+        existedItem = nextItem;
+        break;
+
+      case 38:
+        // function action
+        existedItem = prevItem;
+        break;
+    };
+
+    reqItem = existedItem.length ? existedItem.index() : items.first();
+    moveSection(reqItem);
+  })
 
   // quick clicks protection
   var flag = true;
 
   var changeFlag = function () {
+    const mouseInertionIsFinished = 300,
+      animationDuration = 700;
+
     setTimeout(function () {
       flag = true;
-    }, 700);
+    }, animationDuration + mouseInertionIsFinished);
   }
 
 
@@ -138,7 +159,7 @@ $(function () {
 
       if (reqItem.length) {
         list.animate({
-          'top': -reqIndex * 100 + 'vh'
+          'top': -reqIndex * 100 + '%'
         }, duration, function () {
           activeSection.removeClass('active');
           reqItem.addClass('active');
