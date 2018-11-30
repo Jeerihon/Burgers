@@ -82,8 +82,8 @@ $(function () {
     moveSection(container, reqItem);
   });
 
-  //touch slide
 
+  //touch slide
   $(".wrapper").swipe({
     //Single swipe handler for left swipes
     swipeUp: function (event, direction, distance, duration, fingerCount) {
