@@ -39,7 +39,8 @@
 
   &-bottom {
     @include mix-flex($jc: center);
-    margin-bottom: rem(40px);
+    // margin-bottom: rem(40px);
+    height: 10%;
   }
 }
 

@@ -137,7 +137,7 @@ $(function () {
   var flag = true;
 
   var changeFlag = function () {
-    const mouseInertionIsFinished = 300,
+    const mouseInertionIsFinished = 400,
       animationDuration = 700;
 
     setTimeout(function () {
