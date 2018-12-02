@@ -82,7 +82,6 @@ $(function () {
   //swipe action
   $(function () {
     //Enable swiping...
-    const count = 0;
     $(".section").swipe({
       //Generic swipe handler for all directions
       swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
