@@ -10,6 +10,7 @@
   @include phones {
     flex-direction: column;
     height: 7.25rem;
+    padding-top: 5px;
   }
 }
 
@@ -24,5 +25,9 @@
 
 .footer__right {
   height: auto;
+  
+  @include phones {
+    margin-top: 5px;
+  }
 }
 

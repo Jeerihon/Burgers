@@ -1,5 +1,15 @@
 /* map styles */
 
+.map {
+  // style="width: 100%; height: 90.8%
+  width: 100%;
+  height: 90.8%;
+
+  @include phones {
+    height: 88%;
+  }
+}
+
 .map__item {
   display: flex;
   flex-direction: column;
