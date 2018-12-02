@@ -3,20 +3,20 @@ const videoEl = document.querySelector('.work__video-window'),
   videoContainer = $('.work__player'),
   playBtns = $('.playBtn'),
   volumeBtn = $('.player__volume'),
-  volumeLevelBtn = $('.player__bar--volume').after();
+  volumeLevelBtn = $('.player__bar--volume').after;
 
 
 // play video for click on buttons
 
 playBtns.on('click', e => {
   playVideo();
-})
+});
 
 // play video for click on video window
 
 videoWindow.on('click', e => {
   playVideo();
-})
+});
 
 // click on volume button
 
@@ -27,7 +27,7 @@ volumeBtn.on('click', e => {
     videoEl.volume = .5;
   };
   volumeBtn.toggleClass('player__volume--mute');
-})
+});
 
 // volume setting
 
@@ -36,32 +36,32 @@ volumeBtn.on('click', e => {
 //   console.log(volumeLevel)
 // })
 
-  var changeButtonPos = function(percent){
-    volumeLevelBtn.style.left = `${percent}%`
-  }
+//   var changeButtonPos = function(percent){
+//     volumeLevelBtn.style.left = `${percent}%`
+//   };
 
-  var changeVolumePos = function(percent){
-    playerVolumeRangeButton.style.left = `${percent}%`
-  }
+//   var changeVolumePos = function(percent){
+//     playerVolumeRangeButton.style.left = `${percent}%`
+//   };
 
-  var onPlayerReady = function(){
-    const duration = videoEl.duration;
+//   var onPlayerReady = function(){
+//     const duration = player.duration;
 
-    interval = setInterval(function(){
-      const completed = videoEl.currentTime;
-      const percent = (completed / duration) * 100;
-      changeButtonPos(percent);
-    }, 1000 + 300)
-  }
+//     interval = setInterval(function(){
+//       const completed = player.currentTime;
+//       const percent = (completed / duration) * 100;
+//       changeButtonPos(percent);
+//     }, 1000 + 300)
+//   };
 
-const playVideo = function () {
-  if (videoEl.paused) {
-    videoEl.play();
-  } else {
-    videoEl.pause();
-  };
-  videoContainer.toggleClass('player--active');
-}
+// const playVideo = function () {
+//   if (videoEl.paused) {
+//     videoEl.play();
+//   } else {
+//     videoEl.pause();
+//   };
+//   videoContainer.toggleClass('player--active');
+// };
 
 // var player = (function(){
 //   const container = document.querySelector('.player__play'),

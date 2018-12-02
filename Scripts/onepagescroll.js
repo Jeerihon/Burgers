@@ -84,7 +84,7 @@ $(function () {
     // Enable swiping...
     $(".section").swipe({
       swipeStatus: function (event, phase, direction, distance) {
-        if (phase == "end") {
+        if (phase == "end") { 
           var items = $('.section'),
             activeItem = items.filter('.active'),
             nextItem = activeItem.next(),
@@ -93,11 +93,11 @@ $(function () {
 
           if (direction == 'up') { // swipe up
             existedItem = nextItem;
-          }
+          };
 
           if (direction == 'down') { // swipe down
             existedItem = prevItem;
-          }
+          };
 
           reqItem = existedItem.length ? existedItem.index() : items.first();
           moveSection(reqItem);
@@ -131,7 +131,7 @@ $(function () {
 
     reqItem = existedItem.length ? existedItem.index() : items.first();
     moveSection(reqItem);
-  })
+  });
 
   // quick clicks protection
   var flag = true;
