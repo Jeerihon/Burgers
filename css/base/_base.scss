@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section {
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  // height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
   min-width: 320px;
 }
