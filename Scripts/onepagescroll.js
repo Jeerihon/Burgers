@@ -81,30 +81,31 @@ $(function () {
 
   //swipe action
   $(function () {
-    // Enable swiping...
+    //Enable swiping...
+    const count = 0;
     $(".section").swipe({
-      swipeStatus: function (event, phase, direction, distance) {
-        if (phase == "end") { 
-          var items = $('.section'),
-            activeItem = items.filter('.active'),
-            nextItem = activeItem.next(),
-            prevItem = activeItem.prev(),
-            existedItem, reqItem;
+      //Generic swipe handler for all directions
+      swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+        var items = $('.section'),
+          activeItem = items.filter('.active'),
+          nextItem = activeItem.next(),
+          prevItem = activeItem.prev(),
+          existedItem, reqItem;
 
-          if (direction == 'up') { // swipe up
-            existedItem = nextItem;
-          };
-
-          if (direction == 'down') { // swipe down
-            existedItem = prevItem;
-          };
-
-          reqItem = existedItem.length ? existedItem.index() : items.first();
-          moveSection(reqItem);
+        if (direction == 'up') {
+          existedItem = nextItem;
+          // console.log('asfd')
         };
+
+        if (direction == 'down') {
+          existedItem = prevItem;
+        }
+
+        reqItem = existedItem.length ? existedItem.index() : items.first();
+        moveSection(reqItem);
       },
-      triggerOnTouchEnd: false,
-      threshold: 100
+      //Default is 75px, set to 0 for demo so any distance triggers swipe
+      threshold: 75
     });
   });
 
