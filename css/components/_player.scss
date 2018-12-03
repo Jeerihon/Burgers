@@ -107,7 +107,6 @@
     left: 0;
     will-change: left;
     transform: translateY(-50%);
-    transition: all .2s;
   }
 
 .player__scroll:hover {
@@ -118,6 +117,7 @@
 }
 
 .player__volume {
+  position: relative;
   margin-right: rem(10px);
 
   &-img {
@@ -136,9 +136,36 @@
   }
 }
 
+.player__volume--mute::after,
+.player__volume--mute::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 4px;
+  background-color: $white;
+  border-radius: 3px;
+  opacity: 0;
+}
+
+.player__volume--mute::after {
+  top: 37%;
+  transform: translate(160%, 50%) rotate(45deg);
+}
+
+.player__volume--mute::before {
+  top: 37%;
+  transform: translate(160%, 50%) rotate(-45deg);
+}
+
 .player__volume--mute{
+
   .player__volume-img {
-    fill: $orange;
+    fill: $white;
+  }
+
+  &::after,
+  &::before {
+    opacity: 1;
   }
 }
 

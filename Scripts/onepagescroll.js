@@ -135,43 +135,43 @@ $(function () {
       reqItem = existedItem.length ? existedItem.index() : items.first();
       moveSection(reqItem);
     });
-
-    // quick clicks protection
-    var flag = true;
-
-    var changeFlag = function () {
-      const mouseInertionIsFinished = 400,
-        animationDuration = 700;
-
-      setTimeout(function () {
-        flag = true;
-      }, animationDuration + mouseInertionIsFinished);
-    };
-
-
-    var moveSection = function (sectionNum) {
-      const items = list.find('.section'),
-        activeSection = items.filter('.active'),
-        reqItem = items.eq(sectionNum),
-        reqIndex = reqItem.index(),
-        duration = 700;
-
-      if (flag) {
-
-        flag = false;
-
-        if (reqItem.length) {
-          list.animate({
-            'top': -reqIndex * 100 + '%'
-          }, duration, function () {
-            activeSection.removeClass('active');
-            reqItem.addClass('active');
-            activateDot(sectionNum);
-          });
-        };
-
-        changeFlag();
-      };
-    };
   }
+
+  // quick clicks protection
+  var flag = true;
+
+  var changeFlag = function () {
+    const mouseInertionIsFinished = 400,
+      animationDuration = 700;
+
+    setTimeout(function () {
+      flag = true;
+    }, animationDuration + mouseInertionIsFinished);
+  };
+
+
+  var moveSection = function (sectionNum) {
+    const items = list.find('.section'),
+      activeSection = items.filter('.active'),
+      reqItem = items.eq(sectionNum),
+      reqIndex = reqItem.index(),
+      duration = 700;
+
+    if (flag) {
+
+      flag = false;
+
+      if (reqItem.length) {
+        list.animate({
+          'top': -reqIndex * 100 + '%'
+        }, duration, function () {
+          activeSection.removeClass('active');
+          reqItem.addClass('active');
+          activateDot(sectionNum);
+        });
+      };
+
+      changeFlag();
+    };
+  };
 });
