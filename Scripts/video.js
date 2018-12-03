@@ -54,14 +54,14 @@ volumeBtn.on('click', e => {
 //     }, 1000 + 300)
 //   };
 
-// const playVideo = function () {
-//   if (videoEl.paused) {
-//     videoEl.play();
-//   } else {
-//     videoEl.pause();
-//   };
-//   videoContainer.toggleClass('player--active');
-// };
+const playVideo = function () {
+  if (videoEl.paused) {
+    videoEl.play();
+  } else {
+    videoEl.pause();
+  };
+  videoContainer.toggleClass('player--active');
+};
 
 // var player = (function(){
 //   const container = document.querySelector('.player__play'),
