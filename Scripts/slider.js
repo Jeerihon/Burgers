@@ -5,10 +5,13 @@ const left = document.querySelector('.slider__arrow-left'),
   contentBlock = document.querySelector('.slider__wrap'),
   items = document.querySelector('.slider'),
   computed = getComputedStyle(items),
-  step = parseInt(getComputedStyle(items.firstElementChild).width),
+  itemWidth = parseInt(getComputedStyle(items.firstElementChild).width),
+  step = itemWidth / itemWidth * 100,
   size = items.children.length - 1,
   maxRight = size * step,
   minRight = 0;
+
+console.log(maxRight)
 
 var flag = true;
 
@@ -40,17 +43,20 @@ left.addEventListener("click", function (e) {
 });
 
 function moveRight() {
-  let currentRight = parseInt(computed.right);
-
+  let items = document.querySelector('.slider'),
+    computed = getComputedStyle(items),
+    itemWidth = parseInt(getComputedStyle(items.firstElementChild).width),
+    currentRightValue = parseInt(computed.right) / itemWidth * 100,
+    currentRight = Math.round(currentRightValue / 100) * 100;
+  console.log(currentRight)
   if (flag) {
     flag = false
-
     if (!currentRight) {
       currentRight = 0;
     }
 
     if (currentRight < maxRight) {
-      items.style.right = currentRight + step + "px";
+      items.style.right = currentRight + step + '%';
     } else {
       currentRight = 0;
       items.style.right = minRight;
@@ -61,21 +67,24 @@ function moveRight() {
 }
 
 function moveLeft() {
-  let currentRight = parseInt(computed.right);
-
+  let items = document.querySelector('.slider'),
+    computed = getComputedStyle(items),
+    itemWidth = parseInt(getComputedStyle(items.firstElementChild).width),
+    currentRightValue = parseInt(computed.right) / itemWidth * 100,
+    currentRight = currentRightValue
   if (flag) {
     flag = false
-    
+
     if (!currentRight) {
       currentRight = 0;
     }
 
     if (currentRight > minRight) {
-      items.style.right = currentRight - step + "px";
+      items.style.right = currentRight - step + "%";
     };
     if (currentRight == 0) {
       currentRight = maxRight;
-      items.style.right = maxRight + "px";
+      items.style.right = maxRight + "%";
     };
 
     changeFlag();
