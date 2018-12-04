@@ -75,22 +75,9 @@ $('.player__scroll--progress').on('click', e => {
     newTime = ((newPos / width) * 100).toFixed(0),
     newDuration = (videoEl.duration / 100) * newTime;
 
-    console.log(newTime)
-  
   videoEl.currentTime = newDuration;
   $('.player__progress-btn').css('left', newTime * 100 + '%');
 });
-  
-
-  // const leftPos = this.getBoundingClientRect().left;
-  //     const rightPos = this.getBoundingClientRect().right;
-  //     const width = rightPos - leftPos;
-  //     const newButtonPos = e.pageX - leftPos;
-  //     const clickedPercent = (newButtonPos / width) * 100;
-  //     const newPlayerTime = (player.duration / 100) * clickedPercent;
-  //     player.currentTime = newPlayerTime;
-  //     changeButtonPos(clickedPercent);
-  //   })
 
 const playVideo = function () {
   if (videoEl.paused) {
