@@ -44,6 +44,7 @@ function moveRight() {
 
   if (flag) {
     flag = false
+
     if (!currentRight) {
       currentRight = 0;
     }

@@ -60,7 +60,12 @@ $(function () {
     $('.nav__item').click(function (e) {
       e.preventDefault();
       let $this = $(this),
-        index = $this.index();
+        index = $this.index() +1;
+
+        if (index == 7) {
+          index = $this.index() +2;
+        };
+
 
       moveSection(index);
       activateDot(index);
