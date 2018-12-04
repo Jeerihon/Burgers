@@ -24,7 +24,6 @@ $(function () {
   // dots click
   $('body').on('click', '.dots__item', function () {
     var $this = $(this),
-      container = $this.closest('.wrapper'),
       index = $this.index();
 
     moveSection(index);
@@ -45,7 +44,7 @@ $(function () {
 
   // click on arrow in hero section
   $('.hero-bottom').on('click touch', function () {
-    var $this = $(this),
+    let $this = $(this),
       container = $this.closest('.wrapper'),
       items = $('.section', container),
       activeItem = items.filter('.active'),
@@ -56,6 +55,16 @@ $(function () {
 
 
   if ($(window).width() > 480) {
+
+    //clicks on menu
+    $('.nav__item').click(function (e) {
+      e.preventDefault();
+      let $this = $(this),
+        index = $this.index();
+
+      moveSection(index);
+      activateDot(index);
+    })
 
     // mousewheel action
     $('.wrapper').on('mousewheel DOMMouseScroll', function (e) {
