@@ -97,33 +97,32 @@ $(function () {
 
 
     //swipe action
-    $(function () {
-      //Enable swiping...
-      $(".section").swipe({
-        //Generic swipe handler for all directions
-        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-          var items = $('.section'),
-            activeItem = items.filter('.active'),
-            nextItem = activeItem.next(),
-            prevItem = activeItem.prev(),
-            existedItem, reqItem;
+    // $(function () {
+    //   //Enable swiping...
+    //   $(".section").swipe({
+    //     //Generic swipe handler for all directions
+    //     swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+    //       let items = $('.section'),
+    //         activeItem = items.filter('.active'),
+    //         nextItem = activeItem.next(),
+    //         prevItem = activeItem.prev(),
+    //         existedItem, reqItem;
 
-          if (direction == 'up') {
-            existedItem = nextItem;
-            // console.log('asfd')
-          };
+    //       if (direction == 'up') {
+    //         existedItem = nextItem;
+    //       };
 
-          if (direction == 'down') {
-            existedItem = prevItem;
-          }
+    //       if (direction == 'down') {
+    //         existedItem = prevItem;
+    //       }
 
-          reqItem = existedItem.length ? existedItem.index() : items.first();
-          moveSection(reqItem);
-        },
-        //Default is 75px, set to 0 for demo so any distance triggers swipe
-        threshold: 75
-      });
-    });
+    //       reqItem = existedItem.length ? existedItem.index() : items.first();
+    //       moveSection(reqItem);
+    //     },
+    //     //Default is 75px, set to 0 for demo so any distance triggers swipe
+    //     threshold: 75
+    //   });
+    // });
 
     // key action
 
@@ -188,4 +187,5 @@ $(function () {
       changeFlag();
     };
   };
-});
+  
+})();
